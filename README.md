@@ -1,4 +1,4 @@
-AET
+AET Beta 2 
 ===
 
 Android Environment Tool
