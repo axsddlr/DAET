@@ -82,7 +82,7 @@ tools/bkp_full
 ###########################
 elif [ $fg == 00 ]; then
 echo "this works 1"
-cd ~/AEI/Rom
+cd ~/AET/Rom
 . Main
 ###########################
 ###########################

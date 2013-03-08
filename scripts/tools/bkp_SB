@@ -15,9 +15,9 @@ else
 fi
 
 #Back to Main Script
-if [ ! -f "~/AEI/scripts/Tools" ]
+if [ ! -f "~/AET/scripts/Tools" ]
 then
-	cd ~/AEI/scripts/
+	cd ~/AET/scripts/
 	. Tools
 else
 	echo "Script Malfunctioned"

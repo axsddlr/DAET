@@ -32,10 +32,10 @@ else
 fi
 
 #Return to CM Menu
-if [ ! -d "~/AEI/Rom" ]
+if [ ! -d "~/AET/Rom" ]
 then
-	cd ~/AEI/Rom
-	. Slimbean_main
+	cd ~/AET/Rom
+	. AOKP
 else
 	echo "Script Malfunctioned"
 fi

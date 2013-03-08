@@ -11,9 +11,9 @@ else
 fi
 
 #Back to Main Script
-if [ ! -d "~/AEI/" ]
+if [ ! -d "~/AET/" ]
 then
-	cd ~/AEI/
+	cd ~/AET/
 	. Start
 else
 	echo "Script Malfunctioned"

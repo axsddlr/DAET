@@ -35,7 +35,7 @@ echo "CM Work folder"
 . Slimbean
 ###########################
 elif [ $fg == 00 ]; then
-cd ~/AEI/Rom
+cd ~/AET/Rom
 . Main
 ###########################
 elif [ $fg == 0 ]; then

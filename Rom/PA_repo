@@ -23,9 +23,9 @@ else
 fi
 
 #Return to CM Menu
-if [ ! -d "~/AEI/Rom" ]
+if [ ! -d "~/AET/Rom" ]
 then
-	cd ~/AEI/Rom
+	cd ~/AET/Rom
 	. PA
 else
 	echo "Script Malfunctioned"

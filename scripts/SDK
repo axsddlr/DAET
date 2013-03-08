@@ -6,17 +6,14 @@ tput clear
 if [ ! -d "/usr/local/android-sdk" ]; then
 for a in $( wget -qO- http://developer.android.com/sdk/index.html | egrep -o "http://dl.google.com[^\"']*linux.tgz" ); do
 wget $a && tar --wildcards --no-anchored -xvzf android-sdk_*-linux.tgz; sudo -v; sudo mv android-sdk-linux /usr/local/android-sdk; sudo -v; sudo chmod 777 -R /usr/local/android-sdk; rm android-sdk_*-linux.tgz;
-cd ~/AEI
-./AEI
-done
 else
 echo "Android SDK already installed"
 fi
 
 #Back to Main Script
-if [ ! -d "~/AEI/" ]
+if [ ! -d "~/AET/" ]
 then
-	cd ~/AEI/
+	cd ~/AET/
 	. Start
 else
 	echo "Script Malfunctioned"

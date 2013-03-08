@@ -59,7 +59,7 @@ elif [ $fg == 3 ]; then
 . PA_sync
 ###########################
 elif [ $fg == 00 ]; then
-cd ~/AEI/Rom
+cd ~/AET/Rom
 . Main
 ###########################
 elif [ $fg == 0 ]; then

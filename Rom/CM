@@ -42,7 +42,7 @@ echo "CM Work folder"
 . CM_10.1
 ###########################
 elif [ $fg == 00 ]; then
-cd ~/AEI/Rom
+cd ~/AET/Rom
 . Main
 ###########################
 elif [ $fg == 0 ]; then

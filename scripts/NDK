@@ -9,9 +9,6 @@ if [ ! -d "/usr/local/android-ndk" ]; then
 	done
 else
     echo "Android NDK already installed"
-sleep 1
-cd ~/AEI
-./AEI
 fi
 #Create Symlink for Dalvik Debug Monitor Server (DDMS)
 if [ -f /bin/ddms ] 
@@ -22,9 +19,9 @@ else
 fi
 
 #Back to Main Script
-if [ ! -d "~/AEI/" ]
+if [ ! -d "~/AET/" ]
 then
-	cd ~/AEI/
+	cd ~/AET/
 	. Start
 else
 	echo "Script Malfunctioned"

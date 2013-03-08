@@ -1,7 +1,4 @@
 #!/bin/bash
-
-
-
 reset
 export VER=v0.1.1
 tput cup 0 20
