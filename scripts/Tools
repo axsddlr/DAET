@@ -1,0 +1,96 @@
+#!/bin/bash
+
+tput clear
+reset
+
+tput cup 3 34
+tput setaf 3
+echo "Tools"
+tput sgr0
+
+tput cup 5 32
+tput rev 
+echo "Main Menu"
+tput sgr0
+
+tput cup 7 15
+echo "1. Git Clone Toolchains (Does not work atm)"
+
+tput cup 9 32
+tput rev 
+echo "Repo Backup"
+tput sgr0
+
+tput cup 11 15
+echo "2. Backup AOKP Workfolder"  
+
+tput cup 12 15
+echo "3. Backup Slimbean Workfolder"
+
+tput cup 13 15 
+echo "4. Backup CM10 Workfolder"
+
+tput cup 14 15
+echo "5. Backup CM10.1 Workfolder"
+
+tput cup 15 15
+echo "6. Backup Paranoid Android Workfolder"
+
+tput cup 16 15
+echo "7. Backup All Android Workfolder (Will Result in huge file)"
+
+tput cup 17 15
+echo "0. Exit"
+
+tput cup 18 15
+echo "00. Exit to Main AEI"
+
+tput bold 
+tput cup 22 28
+echo -n "Enter Your Choice  "
+while read fg
+do
+
+###########################
+if [ $fg == 1 ]; then
+echo "this works 1"
+tools/toolchains
+###########################
+elif [ $fg == 2 ]; then
+echo "this works 1"
+tools/bkp_AOKP
+###########################
+elif [ $fg == 3 ]; then
+echo "this works 1"
+tools/bkp_SB
+###########################
+elif [ $fg == 4 ]; then
+echo "this works 1"
+tools/bkp_CM10
+###########################
+elif [ $fg == 5 ]; then
+echo "this works 1"
+tools/bkp_CM10.1
+###########################
+elif [ $fg == 6 ]; then
+echo "this works 1"
+tools/bkp_PA
+###########################
+elif [ $fg == 7 ]; then
+echo "this works 1"
+tools/bkp_full
+###########################
+elif [ $fg == 00 ]; then
+echo "this works 1"
+cd ~/AEI/Rom
+. Main
+###########################
+###########################
+elif [ $fg == 0 ]; then
+exit 1
+else
+tput cup 19 40
+echo "Not a selection from above, Choose again"
+fi
+echo -n "Enter Your Choice  "
+done

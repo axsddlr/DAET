@@ -1,0 +1,24 @@
+#!/bin/bash
+
+tput clear
+
+#Making android/cm10 directory
+if [ ! -f "~/android/PA/.repo/manifest.xml" ]
+then
+    cd ~/android/PA/.repo
+    gedit manifest.xml
+else
+    echo "folder already exists.  Skipping."
+fi
+
+#Return to CM Menu
+if [ ! -d "~/AEI/Rom" ]
+then
+	cd ~/AEI/Rom
+	. PA
+else
+	echo "Script Malfunctioned"
+fi
+
+
+

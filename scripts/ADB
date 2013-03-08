@@ -1,0 +1,29 @@
+#!/bin/bash
+
+tput clear
+
+#Create a symlink for Android Debug Bridge (adb)
+if [ -f /bin/adb ];
+then
+    sudo -v; sudo rm /bin/adb; sudo -v; sudo ln -s /usr/local/android-sdk/platform-tools/adb /bin/adb
+else
+    sudo -v; sudo ln -s /usr/local/android-sdk/platform-tools/adb /bin/adb
+fi
+#Installing adb!
+if [ ! -f "/usr/local/android-sdk/platform-tools/adb" ];
+then  
+	mkdir $HOME/.android; touch $HOME/.android/androidtool.cfg; echo "sdkman.force.http=true" > $HOME/.android/androidtool.cfg; nohup /usr/local/android-sdk/tools/android update sdk > /dev/null 2>&1
+else
+echo "Android Debug Bridge already detected."
+fi
+
+#Back to Main Script
+if [ ! -d "~/AEI/" ]
+then
+	cd ~/AEI/
+	. Start
+else
+	echo "Script Malfunctioned"
+fi
+
+

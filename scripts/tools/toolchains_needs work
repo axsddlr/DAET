@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo "this works 1"
+if [ ! -d "~/android/AEI_toolchains" ]
+then
+    mkdir ~/android/AEI_toolchains
+    cd ~/android/AEI_toolchains	
+else
+    echo "folder already exists.  Skipping."
+fi
+
+#Back to Main Script
+if [ ! -d "~/AEI/" ]
+then
+	cd ~/AEI/
+	. Start
+else
+	echo "Script Malfunctioned"
+fi
+
+
+
+

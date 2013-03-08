@@ -1,0 +1,57 @@
+#!/bin/bash
+
+tput clear
+reset
+
+tput cup 5 34
+tput rev 
+echo "System Info"
+tput sgr0
+
+tput cup 7 33
+tput setaf 3
+echo "System =" $(uname -s) 
+tput sgr0
+
+tput cup 9 30
+tput setaf 3
+echo "Architecture =" $(uname -m) 
+tput sgr0
+
+tput cup 11 32
+tput setaf 3
+echo "gcc version =" $(gcc -dumpversion)
+tput sgr0
+
+tput cup 13 30
+tput setaf 3
+echo "current user =" $(whoami)
+tput sgr0
+
+tput cup 17 36
+echo "0. Exit"
+
+tput cup 18 31
+echo "00. Exit to Main AEI"
+
+tput bold 
+tput cup 21 32
+echo -n "Enter Your Choice  "
+while read fg
+do
+
+###########################
+if [ $fg == 00 ]; then
+echo "this works 1"
+cd ~/AEI/Rom
+. Main
+###########################
+###########################
+elif [ $fg == 0 ]; then
+exit 1
+else
+tput cup 19 40
+echo "Not a selection from above, Choose again"
+fi
+echo -n "Enter Your Choice  "
+done

@@ -1,0 +1,44 @@
+#!/bin/bash
+
+tput clear
+
+#Making android/cm10 directory
+if [ ! -d "~/android/AOKP_jb" ]
+then
+    mkdir ~/android
+    cd ~/android
+    mkdir ~/android/AOKP_jb	
+else
+    echo "folder already exists.  Skipping."
+fi
+
+#Now...time to grab CM10 repo!
+if [ ! -d "~/android/AOKP_jb" ]
+then
+    cd ~/android/AOKP_jb	
+    repo init -u git://github.com/AOKP/platform_manifest.git -b jb
+else
+    echo "folder already exists.  Skipping."
+    
+fi
+
+#Repo Sync
+if [ ! -d "~/android/AOKP_jb" ]
+then
+    cd ~/android/AOKP_jb
+    repo sync -j6
+else
+    echo "folder already exists.  Skipping."
+fi
+
+#Return to CM Menu
+if [ ! -d "~/AEI/Rom" ]
+then
+	cd ~/AEI/Rom
+	. Slimbean_main
+else
+	echo "Script Malfunctioned"
+fi
+
+
+

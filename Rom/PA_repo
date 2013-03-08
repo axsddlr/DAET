@@ -1,0 +1,35 @@
+#!/bin/bash
+
+tput clear
+
+#Making android/cm10 directory
+if [ ! -d "~/android/PA" ]
+then
+    mkdir ~/android
+    cd ~/android
+    mkdir ~/android/PA	
+else
+    echo "~/android/PA already exists.  Skipping."
+fi
+
+#Now...time to grab CM10 repo!
+if [ ! -d "~/android/PA" ]
+then
+    cd ~/android/PA	
+    repo init -u git://github.com/ParanoidAndroid/android.git -b jellybean
+else
+    echo "~/android/PA/.repo already exists.  Skipping."
+    
+fi
+
+#Return to CM Menu
+if [ ! -d "~/AEI/Rom" ]
+then
+	cd ~/AEI/Rom
+	. PA
+else
+	echo "Script Malfunctioned"
+fi
+
+
+

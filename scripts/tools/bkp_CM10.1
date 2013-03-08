@@ -1,0 +1,28 @@
+#!/bin/bash
+
+echo "Android Folders Backup"
+if [ ! -d "~/android/CM10.1" ]
+then		
+    mkdir ~/android/CM10.1_bkp
+    cd ~/android/
+    tar -cvzpf CM10.1.tar.gz --exclude='CM10.1_bkp' *CM10.1*
+    mv CM10.1.tar.gz CM10.1_bkp
+   
+   
+
+else
+    echo "folder already exists.  Skipping."
+fi
+
+#Back to Main Script
+if [ ! -f "~/AEI/scripts/Tools" ]
+then
+	cd ~/AEI/scripts/
+	. Tools
+else
+	echo "Script Malfunctioned"
+fi
+
+
+
+

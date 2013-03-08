@@ -1,0 +1,28 @@
+#!/bin/bash
+
+echo "Android Folders Backup"
+if [ ! -d "~/android/Slimbean" ]
+then		
+    mkdir ~/android/Slimbean_bkp
+    cd ~/android/
+    tar -cvzpf SB.tar.gz --exclude='Slimbean_bkp' *Slimbean*
+    mv SB.tar.gz Slimbean_bkp
+   
+   
+
+else
+    echo "folder already exists.  Skipping."
+fi
+
+#Back to Main Script
+if [ ! -f "~/AEI/scripts/Tools" ]
+then
+	cd ~/AEI/scripts/
+	. Tools
+else
+	echo "Script Malfunctioned"
+fi
+
+
+
+

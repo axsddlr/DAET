@@ -1,0 +1,22 @@
+#!/bin/bash
+
+tput clear
+
+#Create a symlink for libX11
+if [ -f "/usr/lib/i386-linux-gnu/libX11.so" ]
+then
+    sudo -v; sudo rm /usr/lib/i386-linux-gnu/libX11.so; sudo -v; sudo ln -s /usr/lib/i386-linux-gnu/libX11.so.6 /usr/lib/i386-linux-gnu/libX11.so
+else
+    sudo -v; sudo ln -s /usr/lib/i386-linux-gnu/libX11.so.6 /usr/lib/i386-linux-gnu/libX11.so
+fi
+
+#Back to Main Script
+if [ ! -d "~/AEI/" ]
+then
+	cd ~/AEI/
+	. Start
+else
+	echo "Script Malfunctioned"
+fi
+
+

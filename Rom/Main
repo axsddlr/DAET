@@ -1,0 +1,16 @@
+#!/bin/bash
+
+tput clear
+
+#Return to CM Menu
+if [ ! -d "~/AEI" ]
+then
+	sleep 0.1
+	cd ~/AEI
+	. Start
+else
+	echo "Script Malfunctioned"
+fi
+
+
+

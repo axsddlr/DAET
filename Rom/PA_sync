@@ -1,0 +1,24 @@
+#!/bin/bash
+
+tput clear
+
+#Repo Sync
+if [ ! -d "~/android/PA" ]
+then
+    cd ~/android/PA
+    repo sync -j6
+else
+    echo "~/android/PA/.repo already exists.  Skipping."
+fi
+
+#Return to CM Menu
+if [ ! -d "~/AEI/Rom" ]
+then
+	cd ~/AEI/Rom
+	. CM
+else
+	echo "Script Malfunctioned"
+fi
+
+
+

@@ -1,0 +1,44 @@
+#!/bin/bash
+
+tput clear
+
+#Making android/cm10 directory
+if [ ! -d "~/android/cm10.1" ]
+then
+    mkdir ~/android
+    cd ~/android
+    mkdir ~/android/cm10.1	
+else
+    echo "~/android/cm10 already exists.  Skipping."
+fi
+
+#Now...time to grab CM10 repo!
+if [ ! -d "~/android/cm10.1" ]
+then
+    cd ~/android/cm10.1	
+    repo init -u git://github.com/CyanogenMod/android.git -b cm-10.1
+else
+    echo "~/android/cm10/.repo already exists.  Skipping."
+    
+fi
+
+#Repo Sync
+if [ ! -d "~/android/cm10.1" ]
+then
+    cd ~/android/cm10.1	
+    repo sync -j6
+else
+    echo "~/android/cm10/.repo already exists.  Skipping."
+fi
+
+#Return to CM Menu
+if [ ! -d "~/AEI/Rom" ]
+then
+	cd ~/AEI/Rom
+	. CM
+else
+	echo "Script Malfunctioned"
+fi
+
+
+

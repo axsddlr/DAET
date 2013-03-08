@@ -1,0 +1,28 @@
+#!/bin/bash
+
+echo "Android Folders Backup"
+if [ ! -d "~/android/AOKP" ]
+then		
+    mkdir ~/android/AOKP_bkp
+    cd ~/android/
+    tar -cvzpf AOKP.tar.gz --exclude='AOKP_bkp' *AOKP*
+    mv AOKP.tar.gz AOKP_bkp
+   
+   
+
+else
+    echo "folder already exists.  Skipping."
+fi
+
+#Back to Main Script
+if [ ! -f "~/AEI/scripts/Tools" ]
+then
+	cd ~/AEI/scripts/
+	. Tools
+else
+	echo "Script Malfunctioned"
+fi
+
+
+
+

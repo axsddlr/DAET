@@ -1,0 +1,26 @@
+#!/bin/bash
+
+echo "Android Folders Backup"
+if [ ! -d "~/android" ]
+then		
+    mkdir ~/android/full_bkp
+    cd ~/android/
+    tar -cvzpf full_bkp.tar.gz --exclude='Slimbean_bkp' --exclude='PA_bkp' --exclude='AOKP_bkp' --exclude='CM10_bkp' --exclude='CM10.1_bkp' *Slimbean* *AOKP* *PA* *CM10* *CM10.1*
+    mv full_bkp.tar.gz full_bkp
+
+else
+    echo "folder already exists.  Skipping."
+fi
+
+#Back to Main Script
+if [ ! -f "~/AEI/scripts/Tools" ]
+then
+	cd ~/AEI/scripts/
+	. Tools
+else
+	echo "Script Malfunctioned"
+fi
+
+
+
+

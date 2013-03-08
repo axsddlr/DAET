@@ -1,0 +1,565 @@
+#!/bin/bash
+
+tput clear
+clear
+
+cd ~/AEI/scripts
+
+tput cup 3 19
+tput setaf 3
+echo "Enter System Password Below to Continue"
+tput sgr0
+
+if [ ! -f /var/lib/apt/lists/archive.canonical.com_dists_oneiric_partner_binary-i386_Packages ]
+then sudo -v; sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -s -c) partner"
+else echo "repository already exists."
+fi
+sudo -v; sudo apt-get update
+#Determine if the operating system is 32 or 64-bit and then install ia32-libs if necessary.
+d=ia32-libs
+
+if [[ `getconf LONG_BIT` = "64" ]]; 
+
+then
+    echo "64-bit operating system detected.  Checking to see if $d is installed."
+
+    if [[ $(dpkg-query -f'${Status}' --show $d 2>/dev/null) = *\ installed ]]; then
+    	echo "$d already installed."
+    else
+        echo "Installing now..."
+    	sudo -v; sudo apt-get --force-yes -y install $d
+    fi
+else
+	echo "32-bit operating system detected.  Skipping."
+fi
+
+#Check if sun-java6-jdk is installed
+c=sun-java6-jdk
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if sun-java6-jre is installed
+c=sun-java6-jre
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if Eclipse is installed
+c=eclipse
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if Python is installed
+c=python
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if git-core is installed
+c=git-core
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if gnupupg is installed
+c=gnupg
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if libesd0-dev is installed
+c=libesd0-dev
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if libsdl1.2-dev is installed
+c=libsdl1.2-dev
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if dev lib32bz2-dev is installed
+c=lib32bz2-dev
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if dev libghc-bzlib-dev is installed
+c=libghc-bzlib-dev
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if dev libbz2-1.0 is installed
+c=libbz2-1.0
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if flex is installed
+c=flex
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if bison is installed
+c=bison
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if gperf is installed
+c=gperf
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if build-essential is installed
+c=build-essential
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if zip is installed
+c=zip
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if curl is installed
+c=curl
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if lzop is installed
+c=lzop
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if libbz2-dev  is installed
+c=libbz2-dev 
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if bzip2 is installed
+c=bzip2
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if libreadline6:i386 is installed
+c=libreadline6:i386
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if libreadline6 is installed
+c=libreadline6
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if libreadline6-dev:i386 is installed
+c=libreadline6-dev:i386
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if readline-common is installed
+c=readline-common
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if readline-common is installed
+c=xsltproc
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if libreadline6-dev is installed
+c=libreadline6-dev
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if libreadline-dev is installed
+c=libreadline-dev
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if libreadline-dev is installed
+c=lib32readline6
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if libreadline-dev is installed
+c=lib32readline6
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if zlib1g-dev is installed
+c=zlib1g-dev
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if libc6-dev is installed
+c=libc6-dev
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if lib32ncurses5-dev is installed
+c=lib32ncurses5-dev
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if x11proto-core-dev is installed
+c=x11proto-core-dev
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if libx11-dev is installed
+c=libx11-dev
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if lib32readline5-dev is installed
+c=lib32readline5-dev
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if lib32z-dev is installed
+c=lib32z-dev
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if libgl1-mesa is installed
+c=libgl1-mesa-dev
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if g++-multilib is installed
+c=g++-multilib
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if mingw32 is installed
+c=mingw32
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if tofrodos is installed
+c=tofrodos
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if python-markdown is installed
+c=python-markdown
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if libwxgtk2.8-dev is installed
+c=libwxgtk2.8-dev
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if libxml2-utils is installed
+c=libxml2-utils
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if schedtool is installed
+c=schedtool
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Download and install apktool-install.
+if [ ! -f /usr/local/bin/aapt ]; then 
+	wget http://android-apktool.googlecode.com/files/apktool-install-linux-r04-brut1.tar.bz2 && tar --wildcards --no-anchored -xjvf apktool-install-linux-r04-brut1.tar.bz2; sudo -v; sudo mv aapt /usr/local/bin/; sudo -v; sudo mv apktool /usr/local/bin/; sudo -v; sudo chmod 777 /usr/local/bin/aapt; sudo -v; sudo chmod 777 /usr/local/bin/apktool; rm apktool-install-linux-r04-brut1.tar.bz2; rm -rf apktool-install-linux-r04-brut1/;
+else
+    echo "apktool-install already installed to /usr/local/bin.  Skipping."
+fi
+
+#Download and install apktool.
+if [ ! -f "/usr/local/bin/apktool.jar" ]; then 
+	wget http://android-apktool.googlecode.com/files/apktool1.4.3.tar.bz2 && tar --wildcards --no-anchored -xjvf apktool1.4.3.tar.bz2; sudo -v; sudo mv apktool.jar /usr/local/bin/; sudo -v; sudo chmod 777 /usr/local/bin/apktool.jar; rm apktool1.4.3.tar.bz2; rm -rf apktool1.4.3/;
+else
+    echo "apktool already installed to /usr/local/bin.  Skipping."
+fi
+
+#Check for ~/bin
+if [ ! -d ~/bin ]
+then
+    mkdir ~/bin
+else
+    echo "~/bin already exists.  Skipping."
+fi
+
+#Set ~/bin to path
+if grep -q /home/$USER/bin /home/$USER/.bashrc;
+then
+    echo "$HOME/bin set up already."
+else
+    echo "PATH=$PATH:$HOME/bin" >> $HOME/.bashrc
+fi
+
+#Check for repo
+if [ ! -f /usr/local/bin/repo ];
+then
+    wget https://dl-ssl.google.com/dl/googlesource/git-repo/repo; sudo -v; sudo mv repo /usr/local/bin/repo; sudo -v; sudo chmod a+x /usr/local/bin/repo
+else
+    echo "/usr/local/bin/repo already exists."
+fi
+
+#Back to Main Script
+if [ ! -d "~/AEI/" ]
+then
+	cd ~/AEI/
+	. Start
+else
+	echo "Script Malfunctioned"
+fi

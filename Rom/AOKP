@@ -1,0 +1,54 @@
+#!/bin/bash
+
+tput clear
+reset
+
+tput cup 3 32
+tput setaf 3
+echo "AOKP Setup"
+tput sgr0
+
+tput cup 5 32
+tput rev 
+echo "Main Menu"
+tput sgr0
+
+#REPO Sync#
+tput cup 7 15
+echo "1. Setup AOKP 4.2.x (Repo Syncs)"
+
+tput cup 8 15
+echo "0. Exit" 
+
+tput cup 9 15
+echo "00. Exit to Main AEI" 
+
+tput cup 11 15
+tput setaf 3
+echo "		More info here (copy & paste link):
+ http://rootzwiki.com/topic/31166-tutorial-so-you-want-to-build-aokp-jb-ubuntu-1204/"
+tput sgr0
+
+tput bold 
+tput cup 15 28
+echo -n "Enter Your Choice  "
+while read fg
+do
+
+###########################
+if [ $fg == 1 ]; then
+echo "CM Work folder"
+. AOKP_compile
+###########################
+elif [ $fg == 00 ]; then
+cd ~/AEI/Rom
+. Main
+###########################
+elif [ $fg == 0 ]; then
+exit 1
+else
+tput cup 19 40
+echo "Not a selection from above, Choose again"
+fi
+echo -n "Enter Your Choice  "
+done
