@@ -12,6 +12,10 @@ Just git clone to your home directory or the script will not work
 
 cd /home/<your system name> OR cd ~/
 
+THEN
+
+./Start
+
 Known bugs
 ===
 
