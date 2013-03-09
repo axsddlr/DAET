@@ -35,11 +35,11 @@ do
 ###########################
 if [ $fg == 1 ]; then
 echo "CM Work folder"
-. CM_10
+Rom/CM_10
 ###########################
 elif [ $fg == 2 ]; then
 echo "CM Work folder"
-. CM_10.1
+Rom/CM_10.1
 ###########################
 elif [ $fg == 00 ]; then
 cd ~/AET/Rom
