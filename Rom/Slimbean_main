@@ -32,7 +32,7 @@ do
 ###########################
 if [ $fg == 1 ]; then
 echo "CM Work folder"
-. Slimbean
+Rom/Slimbean
 ###########################
 elif [ $fg == 00 ]; then
 cd ~/AET/Rom

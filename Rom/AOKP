@@ -38,7 +38,8 @@ do
 ###########################
 if [ $fg == 1 ]; then
 echo "CM Work folder"
-. AOKP_compile
+cd ~/AET/Rom
+. AOKP_C
 ###########################
 elif [ $fg == 00 ]; then
 cd ~/AET/Rom

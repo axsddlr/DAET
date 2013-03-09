@@ -1,11 +1,11 @@
 #!/bin/bash
 
 echo "Android Folders Backup"
-if [ ! -d "~/android/AOKP" ]
+if [ ! -d "~/android/AOKP_jb" ]
 then		
     mkdir ~/android/AOKP_bkp
     cd ~/android/
-    tar -cvzpf AOKP.tar.gz --exclude='AOKP_bkp' *AOKP*
+    tar -cvzpf AOKP.tar.gz --exclude='AOKP_bkp' *AOKP_jb*
     mv AOKP.tar.gz AOKP_bkp
    
    

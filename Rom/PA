@@ -49,14 +49,14 @@ do
 ###########################
 if [ $fg == 1 ]; then
 echo "PA Work folder"
-. PA_repo
+Rom/PA_repo
 ###########################
 elif [ $fg == 2 ]; then
 echo "CM Work folder"
-. PA_manifest
+Rom/PA_manifest
 ###########################
 elif [ $fg == 3 ]; then
-. PA_sync
+Rom/PA_sync
 ###########################
 elif [ $fg == 00 ]; then
 cd ~/AET/Rom
