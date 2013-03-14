@@ -171,7 +171,8 @@ tput cup 28 31
 tput setaf 3
 echo "Updating"
 tput sgr0
-git pull
+cd ~/AET
+git pull git://github.com/Ayysir/AET.git
 ############################
 elif [ $fg == 0 ]; 
 then
