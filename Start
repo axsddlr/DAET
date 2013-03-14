@@ -70,12 +70,15 @@ echo "12. Tools"
 tput cup 21 15
 echo "13. System Info"
 
-tput cup 23 15
+tput cup 22 15
+echo "14. Check for Android SDK Updates"
+
+tput cup 24 15
 echo "0. Exit"
 
 
 tput bold 
-tput cup 25 26
+tput cup 26 26
 echo -n "Enter Your Choice  "
 tput sgr0
 while read fg
@@ -143,6 +146,14 @@ scripts/Tools
 elif [ $fg == 13 ]; then
 echo "Tools"
 scripts/tools/System_info
+###########################
+elif [ $fg == 14 ]; then
+tput bold 
+tput cup 28 22
+tput setaf 3
+echo "Checking for Android SDK Updates"
+tput sgr0
+scripts/tools/sdk_updates
 ############################
 elif [ $fg == 0 ]; 
 then
