@@ -8,7 +8,7 @@ tput sgr0
 sudo add-apt-repository ppa:langdalepl/gvfs-mtp && sudo apt-get update
 
 tput bold 
-tput cup 0 14
+tput cup 4 14
 tput setaf 3
 read -p "You need to reboot Computer Now, [ENTER]"
 tput sgr0
