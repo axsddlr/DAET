@@ -2,7 +2,7 @@ Thanks/Sources Used
 
 ADB, AAPT, APKTool, Android SDK/NDK, and udev rules auto-installer 
 ===
-Tahl <http://forum.xda-developers.com/member.php?u=4217318>
+<b>Tahl</b> <http://forum.xda-developers.com/member.php?u=4217318>
 
 Android Kernel Kitchen
 ===
