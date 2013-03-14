@@ -73,6 +73,9 @@ echo "13. System Info"
 tput cup 22 15
 echo "14. Check for Android SDK Updates"
 
+tput cup 23 15
+echo "15. MTP Fix for 12.04 & 12.10 distros"
+
 tput cup 24 15
 echo "0. Exit"
 
@@ -154,6 +157,10 @@ tput setaf 3
 echo "Checking for Android SDK Updates"
 tput sgr0
 scripts/tools/sdk_updates
+###########################
+elif [ $fg == 15 ]; then
+echo "MTP Fix for 12.04 & 12.10"
+scripts/tools/mtp_fix
 ############################
 elif [ $fg == 0 ]; 
 then
