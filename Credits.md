@@ -6,9 +6,9 @@ ADB, AAPT, APKTool, Android SDK/NDK, and udev rules auto-installer
 
 Android Kernel Kitchen
 ===
-championswimmer <http://forum.xda-developers.com/member.php?u=4308696>
+<b>championswimmer</b> <http://forum.xda-developers.com/member.php?u=4308696>
 
 Android Kitchen v0.223
 ===
 
-dsixda <http://forum.xda-developers.com/member.php?u=673068>
+<b>dsixda</b> <http://forum.xda-developers.com/member.php?u=673068>
