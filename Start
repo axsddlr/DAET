@@ -77,6 +77,9 @@ tput cup 23 15
 echo "15. MTP Fix for 12.04 & 12.10 distros"
 
 tput cup 24 15
+echo "16. Update Script"
+
+tput cup 24 15
 echo "0. Exit"
 
 
@@ -161,6 +164,14 @@ scripts/tools/sdk_updates
 elif [ $fg == 15 ]; then
 echo "MTP Fix for 12.04 & 12.10"
 scripts/tools/mtp_fix
+###########################
+elif [ $fg == 16 ]; then
+tput bold 
+tput cup 28 31
+tput setaf 3
+echo "Updating"
+tput sgr0
+git pull
 ############################
 elif [ $fg == 0 ]; 
 then
