@@ -79,7 +79,7 @@ echo "15. MTP Fix for 12.04 & 12.10 distros"
 tput cup 24 15
 echo "16. Update Script"
 
-tput cup 24 15
+tput cup 25 15
 echo "0. Exit"
 
 
