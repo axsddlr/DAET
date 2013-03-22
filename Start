@@ -61,25 +61,33 @@ echo "11. Paranoid Android Setup"
 
 tput cup 19 31
 tput rev 
-echo "Extras"
+echo "Kernel Building"
 tput sgr0
 
 tput cup 20 15
-echo "12. Tools"
+echo "12. Setup Kernel Environment"
 
-tput cup 21 15
-echo "13. System Info"
-
-tput cup 22 15
-echo "14. Check for Android SDK Updates"
+tput cup 22 31
+tput rev 
+echo "Extras"
+tput sgr0
 
 tput cup 23 15
-echo "15. MTP Fix for 12.04 & 12.10 distros"
+echo "13. Tools"
 
 tput cup 24 15
-echo "16. Update Script"
+echo "14. System Info"
 
 tput cup 25 15
+echo "15. Check for Android SDK Updates"
+
+tput cup 26 15
+echo "16. MTP Fix for 12.04 & 12.10 distros"
+
+tput cup 27 15
+echo "17. Update Script"
+
+tput cup 28 15
 echo "0. Exit"
 
 
@@ -146,14 +154,18 @@ echo "Paranoid Android Setup"
 Rom/PA
 ###########################
 elif [ $fg == 12 ]; then
-echo "Tools"
-scripts/Tools
+echo "Kernel"
+scripts/Kernel
 ###########################
 elif [ $fg == 13 ]; then
 echo "Tools"
-scripts/tools/System_info
+scripts/Tools
 ###########################
 elif [ $fg == 14 ]; then
+echo "Tools"
+scripts/tools/System_info
+###########################
+elif [ $fg == 15 ]; then
 tput bold 
 tput cup 28 22
 tput setaf 3
@@ -161,11 +173,11 @@ echo "Checking for Android SDK Updates"
 tput sgr0
 scripts/tools/sdk_updates
 ###########################
-elif [ $fg == 15 ]; then
+elif [ $fg == 16 ]; then
 echo "MTP Fix for 12.04 & 12.10"
 scripts/tools/mtp_fix
 ###########################
-elif [ $fg == 16 ]; then
+elif [ $fg == 17 ]; then
 tput bold 
 tput cup 28 31
 tput setaf 3
