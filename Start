@@ -155,7 +155,8 @@ Rom/PA
 ###########################
 elif [ $fg == 12 ]; then
 echo "Kernel"
-scripts/Kernel
+cd ~/AET/scripts
+. Kernel
 ###########################
 elif [ $fg == 13 ]; then
 echo "Tools"
