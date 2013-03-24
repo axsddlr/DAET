@@ -31,7 +31,8 @@ do
 ###########################
 if [ $fg == 1 ]; then
 echo "this works 1"
-kernel/Env_Setup
+cd ~/AET/scripts/kernel
+. Env_Setup
 ###########################
 elif [ $fg == 2 ]; then
 echo "this works 1"

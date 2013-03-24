@@ -3,7 +3,7 @@
 clear
 
 #Creates kernelwork folder (houses all the output folders)
-if [ -d ~/android/kernel ];
+if [ ! -d ~/android/kernel ];
 then
    cd ~/android/kernel
    mkdir kernelwork
@@ -16,7 +16,7 @@ then
   	cd ~/android/kernel/kernelwork
 	mkdir kernel_output
 else
-echo "~/android/kernel/kernelwork directory does not exist"
+	echo "~/android/kernel/kernelwork directory does not exist"
 fi
 
 #making ramdisk folder
@@ -25,7 +25,7 @@ then
         cd ~/android/kernel
 	mkdir Ramdisks
 else
-echo "~/android/kernel/kernelwork directory does not exist"
+	echo "~/android/kernel/kernelwork directory does not exist"
 fi
 
 #making Buildscript folder
@@ -43,7 +43,7 @@ then
         cd ~/android/kernel
 	mkdir kernel_extras
 else
-echo "~/android/kernel/ directory does not exist"
+	echo "~/android/kernel/ directory does not exist"
 fi
 
 #making compile logs folder
@@ -52,6 +52,6 @@ then
         cd ~/android/kernel
 	mkdir compile_logs
 else
-echo "~/android/kernel/ directory does not exist"
+	echo "~/android/kernel/ directory does not exist"
 fi
 
