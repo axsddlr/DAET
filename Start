@@ -1,6 +1,6 @@
 #!/bin/bash
 reset
-export VER=v0.1.1
+export VER=v0.2.0
 tput cup 0 20
 tput setaf 3
 echo "Welcome to Android Environment Tool $VER"
@@ -151,7 +151,7 @@ Rom/Slimbean_main
 ###########################
 elif [ $fg == 11 ]; then
 echo "Paranoid Android Setup"
-Rom/PA
+source ./Rom/PA
 ###########################
 elif [ $fg == 12 ]; then
 echo "Kernel"

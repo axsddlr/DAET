@@ -15,7 +15,7 @@ tput sgr0
 
 #REPO Sync#
 tput cup 7 15
-echo "1. Grab PA Repo"
+echo "1. Grab PA Repo (Creates /android/PA folder)"
 
 tput cup 8 15
 echo "2. Edit Manifest (Add your device Tree)" 
@@ -50,19 +50,30 @@ do
 if [ $fg == 1 ]; then
 echo "PA Work folder"
 Rom/PA_repo
+else
+echo "not here"
+fi
 ###########################
-elif [ $fg == 2 ]; then
+if [ $fg == 2 ]; then
 echo "CM Work folder"
 Rom/PA_manifest
+else
+echo "not here"
+fi
 ###########################
-elif [ $fg == 3 ]; then
+if [ $fg == 3 ]; then
 Rom/PA_sync
+else
+echo "not here"
+fi
 ###########################
-elif [ $fg == 00 ]; then
-cd ~/AET/Rom
-. Main
+if [ $fg == 00 ]; then
+source ~/AET/Rom/Main
+else
+echo "does not work"
+fi
 ###########################
-elif [ $fg == 0 ]; then
+if [ $fg == 0 ]; then
 exit 1
 else
 tput cup 19 40
