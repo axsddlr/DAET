@@ -669,7 +669,7 @@ fi
 #Back to Main Script
 if [ ! -d "~/AET/" ]
 then
-source ~/AET/ .Start
+source ~/AET/Start
 else
 	echo "Script Malfunctioned"
 fi
