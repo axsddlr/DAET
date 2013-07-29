@@ -3,8 +3,8 @@
 tput clear
 
 #Downloads the latest version of 99-android.rules
-wget http://dl.dropbox.com/u/4413349/scripts/99-android.rules
-sudo -v; sudo mv -f 99-android.rules /etc/udev/rules.d/
+wget https://dl.dropboxusercontent.com/u/9621907/51-android.rules
+sudo -v; sudo mv -f 51-android.rules /etc/udev/rules.d/
 
 #Back to Main Script
 if [ ! -d "~/AET/" ]

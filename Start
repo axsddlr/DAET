@@ -135,7 +135,7 @@ scripts/NDK
 sleep 2
 scripts/ADB
 sleep 2
-scripts/99rules
+scripts/51rules
 ###########################
 elif [ $fg == 8 ]; then
 echo "CM Setup"
