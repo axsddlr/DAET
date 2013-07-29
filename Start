@@ -185,6 +185,8 @@ echo "Updating"
 tput sgr0
 cd ~/AET
 git pull git://github.com/Ayysir/AET.git
+sleep 1
+git checkout Beta4
 ############################
 elif [ $fg == 0 ]; 
 then
