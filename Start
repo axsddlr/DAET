@@ -37,7 +37,7 @@ tput cup 9 15
 echo "5. Install Android Debug Bridge (ADB)"
 
 tput cup 10 15
-echo "6. Create 99-android.rules file (Important)"
+echo "6. Create 51-android.rules file (Important)"
 
 tput cup 11 15
 echo "7. Full Install (1-6)"
@@ -120,8 +120,8 @@ echo "Android Debug Bridge (ADB)"
 scripts/ADB
 ###########################
 elif [ $fg == 6 ]; then
-echo "99-android.rules"
-scripts/99rules
+echo "51-android.rules"
+scripts/51rules
 ###########################
 elif [ $fg == 7 ]; then
 echo "Full Install"
