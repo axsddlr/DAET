@@ -183,8 +183,8 @@ tput cup 28 31
 tput setaf 3
 echo "Updating"
 tput sgr0
-cd ~/AET
-git pull git://github.com/Ayysir/AET.git
+cd ~/DAET
+git pull git://github.com/Ayysir/DAET.git
 sleep 1
 git checkout Beta4
 ############################
