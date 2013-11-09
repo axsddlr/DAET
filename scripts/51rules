@@ -7,9 +7,9 @@ wget https://dl.dropboxusercontent.com/u/9621907/51-android.rules
 sudo -v; sudo mv -f 51-android.rules /etc/udev/rules.d/
 
 #Back to Main Script
-if [ ! -d "~/AET/" ]
+if [ ! -d "~/DAET/" ]
 then
-	cd ~/AET/
+	cd ~/DAET/
 	. Start
 else
 	echo "Script Malfunctioned"

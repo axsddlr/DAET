@@ -4,9 +4,9 @@ cd /usr/local/android-sdk/tools
 ./android
 
 #Back to Main Script
-if [ ! -f "~/AET/scripts/Tools" ]
+if [ ! -f "~/DAET/scripts/Tools" ]
 then
-	cd ~/AET
+	cd ~/DAET
 	. Start
 else
 	echo "Script Malfunctioned"

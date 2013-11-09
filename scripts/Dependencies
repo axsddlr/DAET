@@ -3,7 +3,7 @@
 tput clear
 clear
 
-cd ~/AEI/scripts
+cd ~/DAET/scripts
 
 tput cup 3 19
 tput setaf 3
@@ -667,9 +667,9 @@ else
 fi
 
 #Back to Main Script
-if [ ! -d "~/AET/" ]
+if [ ! -d "~/DAET/" ]
 then
-source ~/AET/Start
+source ~/DAET/Start
 else
 	echo "Script Malfunctioned"
 fi
