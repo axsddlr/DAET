@@ -17,9 +17,9 @@ read -p "You need to reboot Computer Now, [ENTER]"
 tput sgr0
 
 #Back to Main Script
-if [ ! -f "~/AET/scripts/Tools" ]
+if [ ! -f "~/DAET/scripts/Tools" ]
 then
-	cd ~/AET
+	cd ~/DAET
 	. Start
 else
 	echo "Script Malfunctioned"
