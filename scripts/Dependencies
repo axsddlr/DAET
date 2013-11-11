@@ -3,7 +3,7 @@
 tput clear
 clear
 
-cd ~/AEI/scripts
+cd ~/DAET/scripts
 
 tput cup 3 19
 tput setaf 3

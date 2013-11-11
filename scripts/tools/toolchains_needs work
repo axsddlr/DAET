@@ -1,18 +1,18 @@
 #!/bin/bash
 
 echo "this works 1"
-if [ ! -d "~/android/AEI_toolchains" ]
+if [ ! -d "~/android/DAET_toolchains" ]
 then
-    mkdir ~/android/AEI_toolchains
-    cd ~/android/AEI_toolchains	
+    mkdir ~/android/DAET_toolchains
+    cd ~/android/DAET_toolchains	
 else
     echo "folder already exists.  Skipping."
 fi
 
 #Back to Main Script
-if [ ! -d "~/AEI/" ]
+if [ ! -d "~/DAET/" ]
 then
-	cd ~/AEI/
+	cd ~/DAET/
 	. Start
 else
 	echo "Script Malfunctioned"
