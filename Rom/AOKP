@@ -21,7 +21,7 @@ tput cup 8 15
 echo "0. Exit" 
 
 tput cup 9 15
-echo "00. Exit to Main AEI" 
+echo "00. Exit to Main DAET" 
 
 tput cup 11 15
 tput setaf 3
@@ -38,11 +38,11 @@ do
 ###########################
 if [ $fg == 1 ]; then
 echo "CM Work folder"
-cd ~/AET/Rom
+cd ~/DAET/Rom
 . AOKP_C
 ###########################
 elif [ $fg == 00 ]; then
-cd ~/AET/Rom
+cd ~/DAET/Rom
 . Main
 ###########################
 elif [ $fg == 0 ]; then

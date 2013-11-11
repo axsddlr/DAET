@@ -1,0 +1,18 @@
+#!/bin/bash
+
+tput clear
+
+#Downloads the latest version of 99-android.rules
+wget https://dl.dropboxusercontent.com/u/9621907/51-android.rules
+sudo -v; sudo mv -f 51-android.rules /etc/udev/rules.d/
+
+#Back to Main Script
+if [ ! -d "~/DAET/" ]
+then
+	cd ~/DAET/
+	. Start
+else
+	echo "Script Malfunctioned"
+fi
+
+

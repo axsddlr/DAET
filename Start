@@ -1,6 +1,6 @@
 #!/bin/bash
 reset
-export VER=v0.1.1
+export VER=v0.2.0
 tput cup 0 20
 tput setaf 3
 echo "Welcome to Android Environment Tool $VER"
@@ -37,7 +37,7 @@ tput cup 9 15
 echo "5. Install Android Debug Bridge (ADB)"
 
 tput cup 10 15
-echo "6. Create 99-android.rules file (Important)"
+echo "6. Create 51-android.rules file (Important)"
 
 tput cup 11 15
 echo "7. Full Install (1-6)"
@@ -120,8 +120,8 @@ echo "Android Debug Bridge (ADB)"
 scripts/ADB
 ###########################
 elif [ $fg == 6 ]; then
-echo "99-android.rules"
-scripts/99rules
+echo "51-android.rules"
+scripts/51rules
 ###########################
 elif [ $fg == 7 ]; then
 echo "Full Install"
@@ -135,7 +135,7 @@ scripts/NDK
 sleep 2
 scripts/ADB
 sleep 2
-scripts/99rules
+scripts/51rules
 ###########################
 elif [ $fg == 8 ]; then
 echo "CM Setup"
@@ -151,7 +151,7 @@ Rom/Slimbean_main
 ###########################
 elif [ $fg == 11 ]; then
 echo "Paranoid Android Setup"
-Rom/PA
+source ./Rom/PA
 ###########################
 elif [ $fg == 12 ]; then
 echo "Kernel"
@@ -183,8 +183,10 @@ tput cup 28 31
 tput setaf 3
 echo "Updating"
 tput sgr0
-cd ~/AET
-git pull git://github.com/Ayysir/AET.git
+cd ~/DAET
+git pull git://github.com/Ayysir/DAET.git
+sleep 1
+git checkout Beta4
 ############################
 elif [ $fg == 0 ]; 
 then

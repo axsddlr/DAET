@@ -3,7 +3,7 @@
 tput clear
 clear
 
-cd ~/AEI/scripts
+cd ~/DAET/scripts
 
 tput cup 3 19
 tput setaf 3
@@ -65,6 +65,106 @@ else
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
 fi
+
+#Check if screen is installed
+c=screen
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if mercurial is installed
+c=mercurial
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if mercurial is installed
+c=mercurial-common
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if automake is installed
+c=automake
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if autoconf is installed
+c=autoconf
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if gawk is installed
+c=gawk
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if libtool is installed
+c=libtool
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if autotools is installed
+c=autotools-dev
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
+#Check if libsigsegv2 is installed
+c=libsigsegv2
+	echo "checking if $c is installed" 2>&1
+if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]]; 
+then
+	echo "$c already installed.  Skipping."
+else 
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
+fi
+
 
 #Check if Python is installed
 c=python
@@ -567,10 +667,9 @@ else
 fi
 
 #Back to Main Script
-if [ ! -d "~/AET/" ]
+if [ ! -d "~/DAET/" ]
 then
-	cd ~/AET/
-	. Start
+source ~/DAET/Start
 else
 	echo "Script Malfunctioned"
 fi

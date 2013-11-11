@@ -3,10 +3,10 @@
 tput clear
 
 #Return to CM Menu
-if [ ! -d "~/AET" ]
+if [ ! -d "~/DAET" ]
 then
 	sleep 0.1
-	cd ~/AET
+	cd ~/DAET
 	. Start
 else
 	echo "Script Malfunctioned"
