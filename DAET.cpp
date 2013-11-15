@@ -140,8 +140,17 @@ void UB()
 		default:
 		cout << "Choice " << choice << " is not valid, please choose again\n " << endl;
 
+	do
+	{
+		cout << "Invalid response, please re-enter choice\n" << endl;
+		delay();
+		cout << "Enter your choice ";
+		cin >> choice;
+		cout << endl;	
+	} while (choice >= 9); 
+
 	}
- } while (choice != 1);
+ } while (choice >= 9 );
 
 }
 
