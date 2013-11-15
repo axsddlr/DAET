@@ -32,7 +32,7 @@ void extras(); // Misc. Options
 int main()
 {
 	//Colors
-	char red[] = "\033[31m ";  //red
+    char red[] = "\033[31m ";  //red
     char blue[] = "\033[34m "; //blue
     char white[] = "\033[0m"; // default terminal
     char bold [] =  "\033[1m"; // bold text  
@@ -76,15 +76,15 @@ void UB()
 	//Colors
 	char red[] = "\033[31m ";  //red
         char blue[] = "\033[34m "; //blue
-    	char white[] = "\033[0m"; // default terminal
-    	char bold [] =  "\033[1m"; // bold text  
+        char white[] = "\033[0m"; // default terminal
+        char bold [] =  "\033[1m"; // bold text  
 	int choice;
 
  do
  {
  	system("clear"); 
  	cout << red << bold << "Distro Android Environment Tool for Ubuntu" << white << endl;
-    	frame(28,'-'); // TODO: need to fix alignment
+        frame(28,'-'); // TODO: need to fix alignment
 	cout << "1. Install Dependencies" << endl;
 	cout << "2. Ubuntu 11.10 users" << endl;
 	cout << "3. Install Android SDK" << endl;
@@ -151,8 +151,8 @@ void AL()
         system("clear"); 
 	char arch_choice;	
 	char red[] = "\033[31m ";  //red
-    	char blue[] = "\033[34m "; //blue
-    	char white[] = "\033[0m"; // default terminal
+        char blue[] = "\033[34m "; //blue
+        char white[] = "\033[0m"; // default terminal
         char bold [] =  "\033[1m"; // bold text  
 
  	cout << red << bold << "Distro Android Environment Tool for Archlinux" << white << endl;
