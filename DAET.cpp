@@ -234,7 +234,7 @@ void delay() // researched and read up about nano sleep, in unix it allows progr
 void frame(int n,char ch)
 {    
   
-        cout << "    ";  // bottom border indent 
+        cout << "   ";  // bottom border indent 
         for(int i=0; i<n ;i++)   
             cout << ch; 
             cout << endl;  
