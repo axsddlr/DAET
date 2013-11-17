@@ -7,6 +7,8 @@ Distro Android Environment Tool
 
 By Ayysir (xda: http://forum.xda-developers.com/member.php?u=4238916)
 
+Forum Thread: http://forum.xda-developers.com/showthread.php?t=2100673
+
 
 Setup
 ===
