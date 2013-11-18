@@ -25,11 +25,11 @@
 
  int main()
  {
- 	cout << arc() << endl;
+ 	cout << arc() << endl;  
  }
 
  int getArchitecture();
  {
  	int * temp;
- 	return sizeof (temp)*8;
+ 	return sizeof (temp)*8; // pointers always compatible with system architecture
  }
