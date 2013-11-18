@@ -31,5 +31,5 @@
  int getArchitecture();
  {
  	int * temp;
- 	return sizeot f(temp)*8;
+ 	return sizeof (temp)*8;
  }
