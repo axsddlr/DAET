@@ -38,7 +38,7 @@ int main()
     char bold [] =  "\033[1m"; // bold text  
 
     char distro, repeat;
-    system("clear"); 
+    system("reset"); 
 
 
 cout << red << bold << "Main Menu" << white << endl;
@@ -82,7 +82,7 @@ void UB()
 
  do
  {
- 	system("clear"); 
+ 	system("reset"); 
  	cout << red << bold << "Distro Android Environment Tool for Ubuntu" << white << endl;
         frame(28,'-'); // TODO: need to fix alignment
 	cout << "1. Install Dependencies" << endl;
@@ -100,7 +100,6 @@ void UB()
 	switch (choice)
 	{
 		case 0:
-	        system("clear"); 
 		delay();
 		exit(0);
 
@@ -157,7 +156,7 @@ void UB()
 
 void AL()
 {
-        system("clear"); 
+        system("reset"); 
 	char arch_choice;	
 	char red[] = "\033[31m ";  //red
         char blue[] = "\033[34m "; //blue
@@ -178,7 +177,6 @@ void AL()
    switch (arch_choice)
    {
 		case 'e':
-	    system("clear"); 
 		delay();
 		exit(0);
 
