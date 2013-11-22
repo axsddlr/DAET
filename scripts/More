@@ -1,0 +1,110 @@
+#!/bin/bash
+
+ #
+ # Copyright (C) 2012-2013, Ayysir
+ #
+ # Licensed under the Apache License, Version 2.0 (the "License");
+ # you may not use this file except in compliance with the License.
+ # You may obtain a copy of the License at
+ #
+ #      http://www.apache.org/licenses/LICENSE-2.0
+ #
+ # Unless required by applicable law or agreed to in writing, software
+ # distributed under the License is distributed on an "AS IS" BASIS,
+ # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ # 
+
+DIR=$(pwd)
+UBT=$DIR/scripts #UBT = UBUNTU, this variable looks for scripts directory in DAET folder
+
+while [[ -f $UBT/UB ]]; do
+
+    if [[ -f $DIR/tools/common ]]; then
+		source $DIR/tools/common
+	else
+		echo "file does not exist"
+  		exit 1
+	fi
+    
+    #hack
+    cd ..
+    resc=$DIR/tools
+    cd $resc
+
+    if [ "$ERROR" != "" ]; then
+    echo "Error: $ERROR"
+    echo ""
+    fi
+
+    echo  "${BRed}${More}More${Reset}"
+    echo  "    ------ "
+	  echo  "1. Update SDK" 
+	  echo  "2. Fix mtp for 12.04 users"  
+	  echo  "3. Install Android NDK"
+    echo  "4. System Info"    
+	  echo  "m. Main ubuntu menu"
+	  echo  "0. Exit"  
+    read input
+
+    case $input in
+      1)
+            if [[ -f $resc/sdk_updates ]]; then
+              source $resc/sdk_updates
+            else
+              echo "File does not exist"
+              reset
+              fi
+              ;;
+      2)
+            if [[ -f $resc/mtp_fix ]]; then
+              source $resc/mtp_fix
+            else
+              echo "File does not exist"
+              reset
+              fi
+              ;;
+      3)
+            if [[ -f $resc/ndk ]]; then
+              source $resc/ndk
+            else
+              echo "File does not exist"
+              reset
+              fi
+              ;;
+
+      4)
+            if [[ -f $resc/sysinfo ]]; then
+              source $resc/sysinfo
+            else
+              echo "File does not exist"
+              reset
+              fi
+              ;;
+     "m")
+              #Hack
+              cd ..
+              cd $UBT
+            if [[ -f $UBT/UB ]]; then
+              reset
+              echo "ub exists" #debug
+              source $UBT/UB
+            else
+              echo "File does not exist"
+              reset
+              fi
+              ;;
+
+
+      0)
+            reset 
+            exit 1
+            ;;
+
+      *)
+            ERROR=""
+            ERROR="Please enter a valid option"
+            clear
+    esac
+done
