@@ -20,9 +20,7 @@ DIR=$(pwd)
 
 while [[ -f $DIR/DAET ]]; do
 
-    UB=$DIR/scripts/ubuntu
-    AL=$DIR/scripts/arch
-    UPD=$DIR/scripts/update
+    resc=$DIR/scripts
 
     if [ "$ERROR" != "" ]; then
     echo "Error: $ERROR"
@@ -40,9 +38,8 @@ while [[ -f $DIR/DAET ]]; do
 
     case $input in
       1)
-            if [[ -f $UB ]]; then
-              echo "it exists"
-              source $DIR/scripts/ubuntu
+            if [[ -f $resc/UB ]]; then
+              source $resc/UB
             else
               echo "File does not exist"
               reset
