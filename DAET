@@ -46,16 +46,16 @@ while [[ -f $DIR/DAET ]]; do
               fi
               ;;
       2)
-            if [[ -f $AL ]]; then
-              source $DIR/scripts/arch
+            if [[ -f $resc/AL ]]; then
+              source $resc/AL
             else
               echo "File does not exist"
               reset
               fi
               ;;
       3)
-            if [[ -f $UPD ]]; then
-              source $DIR/scripts/update
+            if [[ -f $resc/UPD ]]; then
+              source $resc/UPD
             else
               echo "File does not exist"
               reset              
