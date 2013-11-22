@@ -1,6 +1,8 @@
 #!/bin/bash
 
 reset
+DIR=$(pwd)
+resc=$DIR/scripts
 
 echo "Do you want to continue?"
 read usr
@@ -672,8 +674,8 @@ else
 fi
 
 #Back to Main Script
-if [[ -f `pwd`/DAET ]]; then
-	source DAET
+if [[ -f $resc/UB ]]; then
+	source $resc/UB
 else
 	echo "script does not exist"
 	exit 1
@@ -683,7 +685,7 @@ fi
 elif [[ $usr = n || $usr = N ]]; then
 	sleep 1
 	reset
-	source DAET
+	source $resc/UB
 else
 	echo "script does not exist"
 fi

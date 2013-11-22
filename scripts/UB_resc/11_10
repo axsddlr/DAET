@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tput clear
+DIR=$(pwd)
+resc=$DIR/scripts
 
 #Create a symlink for libX11
 if [ -f "/usr/lib/i386-linux-gnu/libX11.so" ]
@@ -11,12 +12,11 @@ else
 fi
 
 #Back to Main Script
-if [ ! -d "~/DAET/" ]
-then
-	cd ~/DAET/
-	. Start
+if [[ -f $resc/UB ]]; then
+	source $resc/UB
 else
-	echo "Script Malfunctioned"
+	echo "script does not exist"
+	exit 1
 fi
 
 

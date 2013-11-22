@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tput clear
+DIR=$(pwd)
+resc=$DIR/scripts
 
 #Download and install the Android SDK
 if [ ! -d "/usr/local/android-sdk" ]; then
@@ -12,12 +13,9 @@ echo "Android SDK already installed"
 fi
 
 #Back to Main Script
-if [ ! -d "~/DAET/" ]
-then
-	cd ~/DAET/
-	. Start
+if [[ -f $resc/UB ]]; then
+	source $resc/UB
 else
-	echo "Script Malfunctioned"
+	echo "script does not exist"
+	exit 1
 fi
-
-

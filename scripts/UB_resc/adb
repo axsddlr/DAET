@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tput clear
+DIR=$(pwd)
+resc=$DIR/scripts
 
 #Create a symlink for Android Debug Bridge (adb)
 if [ -f /bin/adb ];
@@ -18,12 +19,11 @@ echo "Android Debug Bridge already detected."
 fi
 
 #Back to Main Script
-if [ ! -d "~/DAET/" ]
-then
-	cd ~/DAET/
-	. Start
+if [[ -f $resc/UB ]]; then
+	source $resc/UB
 else
-	echo "Script Malfunctioned"
+	echo "script does not exist"
+	exit 1
 fi
 
 
