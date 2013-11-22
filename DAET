@@ -22,12 +22,24 @@
     echo  "Enter your choice " 
     read input
 
-    if [[ $input == 'a' || $input == 'A' ]]; then
-      echo "al"
+    if   [[ $input == 'a' || $input == 'A' ]]; then
+      if [[ -f `pwd`/scripts/dependencies ]]; then
+      	  source dependencies
+      	else
+      		echo "File does not exist"
+      	fi
     elif [[ $input == 'u' || $input == 'U' ]]; then
-      echo "ub"
+      if [[ -f `pwd`/scripts/arch ]]; then
+      	  source arch
+      	else
+      		echo "File does not exist"
+      	fi
     elif [[ $input == 'n' || $input == 'N' ]]; then
-      echo "upd"
+      if [[ -f `pwd`/scripts/update]]; then
+      	  source update
+      	else
+      		echo "File does not exist"
+      	fi
     else 
       echo "yolo"	
     fi
