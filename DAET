@@ -20,6 +20,13 @@ DIR=$(pwd)
 
 while [[ -f $DIR/DAET ]]; do
 
+    if [[ -f $DIR/tools/common ]]; then
+      source $DIR/tools/common
+    else
+      echo "file does not exist"
+      exit 1
+    fi
+
     resc=$DIR/scripts
 
     if [ "$ERROR" != "" ]; then
@@ -27,11 +34,11 @@ while [[ -f $DIR/DAET ]]; do
     echo ""
     fi
 
-    echo  "Main Menu"
+    echo  "${BRed}Main Menu${Reset}"
     echo  " ------- "
     echo  "1. Ubuntu Setup"
     echo  "2. Archlinux Setup" 
-    echo  "3. Update Scripts" 
+    echo  "3. Update DAET" 
     echo  "0. Exit"
     echo  "Enter your choice " 
     read input
