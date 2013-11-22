@@ -16,10 +16,13 @@
  # limitations under the License.
  # 
 
+DIR=$(pwd)
 
-while :
-do
-    UB="`pwd`/scripts/ubuntu"
+while [[ -f $DIR/DAET ]]; do
+
+    UB=$DIR/scripts/ubuntu
+    AL=$DIR/scripts/arch
+    UPD=$DIR/scripts/update
 
     if [ "$ERROR" != "" ]; then
     echo "Error: $ERROR"
@@ -33,40 +36,40 @@ do
     echo  "3. Update Scripts" 
     echo  "0. Exit"
     echo  "Enter your choice " 
-    ERROR=""
     read input
 
     case $input in
       1)
-            if [ -f $UB ]; then
-                echo "it exists"
+            if [[ -f $UB ]]; then
+              echo "it exists"
+              source $DIR/scripts/ubuntu
               else
                       echo "File does not exist"
               fi
               ;;
       2)
-            if [[ -f `pwd`/scripts/arch ]]; then
-               source /scripts/arch
+            if [[ -f $AL ]]; then
+              source $DIR/scripts/arch
               else
-                      echo "File does not exist"
+              echo "File does not exist"
               fi
               ;;
       3)
-            if [[ -f `pwd`/scripts/update ]]; then
-               source /scripts/update
+            if [[ -f $UPD ]]; then
+              source $DIR/scripts/update
               else
-                      echo "File does not exist"
+              echo "File does not exist"
               fi
               ;;
 
       0)
-          reset 
-          exit 1
-          ;;
+            reset 
+            exit 1
+            ;;
 
       *)
+            ERROR=""
             ERROR="Please enter a valid option"
-    esac
-
             clear
+    esac
 done
