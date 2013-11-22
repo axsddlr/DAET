@@ -1,0 +1,42 @@
+#!/bin/bash
+
+DIR=$(pwd)
+resc=$DIR/scripts
+
+
+    if [[ -f $DIR/common ]]; then
+		source $DIR/common
+	else
+		echo "file does not exist"
+  		exit 1
+	fi
+
+echo "${BRed}${sysinfo}System Info ${Reset}"
+echo  "       ------- "
+echo""
+
+echo "current user =" "${BRed}$USR ${Reset}"
+
+echo "System =" "${BRed}$SYS ${Reset}"
+
+echo "Architecture =" "${BRed}$BIT ${Reset}"
+
+echo "gcc version =" "${BRed}$GCC ${Reset}"
+
+
+sleep 3
+echo""
+echo""
+echo "Finished?"
+read fin
+
+if [[ $fin = y || $fin = Y ]]; then
+#below is a bit of a hack but works with no issues
+	    cd ..    
+	    dir=$(pwd)
+	    reset
+        source $dir/scripts/More
+else
+	reset
+	exit 1
+fi
