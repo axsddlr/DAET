@@ -16,6 +16,8 @@
  # limitations under the License.
  # 
 
+reset 
+
 DIR=$(pwd)
 
 while [[ -f $DIR/DAET ]]; do
@@ -34,8 +36,8 @@ while [[ -f $DIR/DAET ]]; do
     echo ""
     fi
 
-    echo  "${BRed}Main Menu${Reset}"
-    echo  " ------- "
+    echo  "${BRed}${main}Main Menu${Reset}"
+    echo  "      ------ "
     echo  "1. Ubuntu Setup"
     echo  "2. Archlinux Setup" 
     echo  "3. Update DAET" 
@@ -46,6 +48,7 @@ while [[ -f $DIR/DAET ]]; do
     case $input in
       1)
             if [[ -f $resc/UB ]]; then
+              reset
               source $resc/UB
             else
               echo "File does not exist"
@@ -55,6 +58,7 @@ while [[ -f $DIR/DAET ]]; do
       2)
             if [[ -f $resc/AL ]]; then
               source $resc/AL
+              reset
             else
               echo "File does not exist"
               reset
@@ -63,6 +67,7 @@ while [[ -f $DIR/DAET ]]; do
       3)
             if [[ -f $resc/UPD ]]; then
               source $resc/UPD
+              reset
             else
               echo "File does not exist"
               reset              

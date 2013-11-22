@@ -35,10 +35,12 @@ while [[ -f $UBT/UB ]]; do
     echo ""
     fi
 
+	echo "${BRed}${ub}Ubuntu Main Menu ${Reset}"
+	echo  "        ---------- "
+	echo""
 	echo  "1. Install Dependencies" 
 	echo  "2. Ubuntu 11.10 users"  
 	echo  "3. Install Android SDK"  
-   #echo  "4. Install Android NDK" << add to more script
 	echo  "4. Install Android Debug Bridge (ADB)"  
 	echo  "5. Install 1-4"   
 	echo  "6. More"
@@ -118,6 +120,15 @@ while [[ -f $UBT/UB ]]; do
               fi
               ;;
 
+    6)
+            if [[ -f $UBT/More ]]; then
+              reset
+              source $UBT/More
+            else
+              echo "File does not exist"
+              reset
+              fi
+              ;;
     "m")
             if [[ -f $DIR/DAET ]]; then
               reset
@@ -138,5 +149,6 @@ while [[ -f $UBT/UB ]]; do
             ERROR=""
             ERROR="Please enter a valid option"
             clear
+            ;;
     esac
 done

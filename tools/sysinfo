@@ -1,5 +1,7 @@
 #!/bin/bash
 
+reset
+
 DIR=$(pwd)
 resc=$DIR/scripts
 
