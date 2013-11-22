@@ -43,22 +43,25 @@ while [[ -f $DIR/DAET ]]; do
             if [[ -f $UB ]]; then
               echo "it exists"
               source $DIR/scripts/ubuntu
-              else
-                      echo "File does not exist"
+            else
+              echo "File does not exist"
+              reset
               fi
               ;;
       2)
             if [[ -f $AL ]]; then
               source $DIR/scripts/arch
-              else
+            else
               echo "File does not exist"
+              reset
               fi
               ;;
       3)
             if [[ -f $UPD ]]; then
               source $DIR/scripts/update
-              else
+            else
               echo "File does not exist"
+              reset              
               fi
               ;;
 
