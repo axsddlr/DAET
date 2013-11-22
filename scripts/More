@@ -28,10 +28,11 @@ while [[ -f $UBT/UB ]]; do
   		exit 1
 	fi
     
+
     #hack
     cd ..
-    resc=$DIR/tools
-    cd $resc
+    resc=$DIR/scripts
+    cd $resc 
 
     if [ "$ERROR" != "" ]; then
     echo "Error: $ERROR"
@@ -50,6 +51,11 @@ while [[ -f $UBT/UB ]]; do
 
     case $input in
       1)
+            #hack
+            cd ..
+            resc=$DIR/tools
+            cd $resc 
+
             if [[ -f $resc/sdk_updates ]]; then
               source $resc/sdk_updates
             else
@@ -58,6 +64,11 @@ while [[ -f $UBT/UB ]]; do
               fi
               ;;
       2)
+            #hack
+            cd ..
+            resc=$DIR/tools
+            cd $resc
+
             if [[ -f $resc/mtp_fix ]]; then
               source $resc/mtp_fix
             else
@@ -66,6 +77,11 @@ while [[ -f $UBT/UB ]]; do
               fi
               ;;
       3)
+            #hack
+            cd ..
+            resc=$DIR/tools
+            cd $resc
+
             if [[ -f $resc/ndk ]]; then
               source $resc/ndk
             else
@@ -75,6 +91,11 @@ while [[ -f $UBT/UB ]]; do
               ;;
 
       4)
+            #hack
+            cd ..
+            resc=$DIR/tools
+            cd $resc
+
             if [[ -f $resc/sysinfo ]]; then
               source $resc/sysinfo
             else
@@ -83,9 +104,6 @@ while [[ -f $UBT/UB ]]; do
               fi
               ;;
      "m")
-              #Hack
-              cd ..
-              cd $UBT
             if [[ -f $UBT/UB ]]; then
               reset
               echo "ub exists" #debug
