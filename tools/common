@@ -38,5 +38,8 @@
     BWhite=${Bold}$(tput setaf 7)
     #}}}
 
-    # ARCHITECTURE
+    # System Info
     BIT=`uname -m`
+    SYS=`uname -s`
+    GCC=`gcc -dumpversion`
+    USR=`whoami`
