@@ -1,0 +1,142 @@
+#!/bin/bash
+
+ #
+ # Copyright (C) 2012-2013, Ayysir
+ #
+ # Licensed under the Apache License, Version 2.0 (the "License");
+ # you may not use this file except in compliance with the License.
+ # You may obtain a copy of the License at
+ #
+ #      http://www.apache.org/licenses/LICENSE-2.0
+ #
+ # Unless required by applicable law or agreed to in writing, software
+ # distributed under the License is distributed on an "AS IS" BASIS,
+ # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ # 
+
+DIR=$(pwd)
+UBT=$DIR/scripts #UBT = UBUNTU, this variable looks for scripts directory in DAET folder
+
+while [[ -f $UBT/UB ]]; do
+
+    if [[ -f $DIR/tools/common ]]; then
+		source $DIR/tools/common
+	else
+		echo "file does not exist"
+  		exit 1
+	fi
+
+    resc=$DIR/scripts/UB_resc
+
+    if [ "$ERROR" != "" ]; then
+    echo "Error: $ERROR"
+    echo ""
+    fi
+
+	echo  "1. Install Dependencies" 
+	echo  "2. Ubuntu 11.10 users"  
+	echo  "3. Install Android SDK"  
+   #echo  "4. Install Android NDK" << add to more script
+	echo  "4. Install Android Debug Bridge (ADB)"  
+	echo  "5. Install 1-4"   
+	echo  "6. More"
+	echo  "m. Main distro menu"
+	echo  "0. Exit"  
+    read input
+
+    case $input in
+      1)
+            if [[ -f $resc/dependencies ]]; then
+              source $resc/dependencies
+            else
+              echo "File does not exist"
+              reset
+              fi
+              ;;
+      2)
+            if [[ -f $resc/11_10 ]]; then
+              source $resc/11_10
+            else
+              echo "File does not exist"
+              reset
+              fi
+              ;;
+      3)
+            if [[ -f $resc/sdk ]]; then
+              source $resc/sdk
+            else
+              echo "File does not exist"
+              reset
+              fi
+              ;;
+
+      4)
+            if [[ -f $resc/adb ]]; then
+              source $resc/adb
+            else
+              echo "File does not exist"
+              reset
+              fi
+              ;;
+
+      5)
+
+            if [[ -f $resc/dependencies ]]; then
+              source $resc/dependencies
+            else
+              echo "File does not exist"
+              reset
+              fi
+              
+              sleep 2
+
+            if [[ -f $resc/11_10 ]]; then
+              source $resc/11_10
+            else
+              echo "File does not exist"
+              reset
+              fi
+              
+              sleep 2
+
+            if [[ -f $resc/sdk ]]; then
+              source $resc/sdk
+            else
+              echo "File does not exist"
+              reset
+              fi
+              
+              sleep 2
+
+            if [[ -f $resc/adb ]]; then
+              source $resc/adb
+            else
+              echo "File does not exist"
+              reset
+              fi
+              ;;
+
+    "m")
+            if [[ -f $DIR/DAET ]]; then
+              reset
+              source $DIR/DAET
+            else
+              echo "File does not exist"
+              reset
+              fi
+              ;;
+
+
+      0)
+            reset 
+            exit 1
+            ;;
+
+      *)
+            ERROR=""
+            ERROR="Please enter a valid option"
+            clear
+    esac
+done
