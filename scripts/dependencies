@@ -1,9 +1,14 @@
 #!/bin/bash
 
-tput clear
-clear
+reset
 
-cd ~/DAET/scripts
+echo "Do you want to continue?"
+read usr
+echo ""
+
+if [[ $usr = y || $usr = Y ]]; then
+
+
 
 tput cup 3 19
 tput setaf 3
@@ -667,9 +672,19 @@ else
 fi
 
 #Back to Main Script
-if [[ -f `pwd`/DAET.sh ]]; then
-source DAET.sh
+if [[ -f `pwd`/DAET ]]; then
+	source DAET
 else
-echo "script does not exist"
-exit 1
+	echo "script does not exist"
+	exit 1
 fi
+
+# if user chooses no pretaining to first few lines in this script
+elif [[ $usr = n || $usr = N ]]; then
+	sleep 1
+	reset
+	source DAET
+else
+	echo "script does not exist"
+fi
+
