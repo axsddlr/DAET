@@ -39,6 +39,8 @@
     #Per script alignment
     More=$(tput cup 1 5)
     sysinfo=$(tput cup 2 5)
+    ub=$(tput cup 1 5)
+    main=$(tput cup 1 5)
     #}}}
 
     # System Info
