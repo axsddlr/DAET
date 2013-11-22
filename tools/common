@@ -36,6 +36,9 @@
     BPurple=${Bold}$(tput setaf 5)
     BCyan=${Bold}$(tput setaf 6)
     BWhite=${Bold}$(tput setaf 7)
+    #Per script alignment
+    More=$(tput cup 1 5)
+    sysinfo=$(tput cup 2 5)
     #}}}
 
     # System Info
