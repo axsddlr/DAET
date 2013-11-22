@@ -23,23 +23,11 @@
     read input
 
     if   [[ $input == 'a' || $input == 'A' ]]; then
-      if [[ -f `pwd`/scripts/dependencies ]]; then
-      	  source dependencies
-      	else
-      		echo "File does not exist"
-      	fi
+      echo "al"
     elif [[ $input == 'u' || $input == 'U' ]]; then
-      if [[ -f `pwd`/scripts/arch ]]; then
-      	  source arch
-      	else
-      		echo "File does not exist"
-      	fi
+      echo "ub"
     elif [[ $input == 'n' || $input == 'N' ]]; then
-      if [[ -f `pwd`/scripts/update]]; then
-      	  source update
-      	else
-      		echo "File does not exist"
-      	fi
+      echo "upd"
     else 
       echo "yolo"	
     fi
