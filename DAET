@@ -39,7 +39,7 @@ while [[ -f $DIR/DAET ]]; do
     echo  "${BRed}${main}Main Menu${Reset}"
     echo  "      ------ "
     echo  "1. Ubuntu Setup"
-    echo  "2. Archlinux Setup" 
+    echo  "2. Archlinux Setup (not available yet)" 
     echo  "3. Update DAET" 
     echo  "0. Exit"
     echo  "Enter your choice " 
@@ -57,8 +57,9 @@ while [[ -f $DIR/DAET ]]; do
               ;;
       2)
             if [[ -f $resc/AL ]]; then
-              source $resc/AL
-              reset
+              #source $resc/AL
+              echo "feature not yet available"
+              source $DIR/DAET
             else
               echo "File does not exist"
               reset
