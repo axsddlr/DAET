@@ -1,6 +1,15 @@
 #!/bin/bash
 reset 
+DIR=$(pwd)
 
+    if [[ -f $DIR/common ]]; then
+		source $DIR/common
+	else
+		echo "file does not exist"
+  		exit 1
+	fi
+
+if [ "$OS" != "Arch Linux \r (\l)" ]; then
 tput bold 
 tput cup 0 14
 tput setaf 3
@@ -17,14 +26,30 @@ read -p "You need to reboot Computer Now, [ENTER]"
 tput sgr0
 
 #Back to Main Script
-if [ ! -f "~/DAET/scripts/Tools" ]
-then
-	cd ~/DAET
-	. Start
+cd ..
+prev=$PWD
+
+if [[ -f $prev/DAET ]]; then
+	source $prev/DAET
 else
-	echo "Script Malfunctioned"
+	echo "script does not exist"
+	exit 1
 fi
+else
 
+echo " This is an archlinux based distro...exiting..."
 
+sleep 2
 
+#Back to Main Script
+cd ..
+prev=$PWD
+
+if [[ -f $prev/DAET ]]; then
+	source $prev/DAET
+else
+	echo "script does not exist"
+	exit 1
+fi
+fi
 

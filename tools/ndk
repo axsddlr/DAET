@@ -1,8 +1,17 @@
 #!/bin/bash
 
 tput clear
+DIR=$(pwd)
+
+    if [[ -f $DIR/common ]]; then
+		source $DIR/common
+	else
+		echo "file does not exist"
+  		exit 1
+	fi
 
 #Download and install the Android NDK.
+if [ "$OS" != "Arch Linux \r (\l)" ]; then
 if [ ! -d "/usr/local/android-ndk" ]; then 
 	for b in $(  wget -qO- http://developer.android.com/sdk/ndk/index.html | egrep -o "http://dl.google.com[^\"']*linux-x86.tar.bz2"
  ); do wget $b && tar --wildcards --no-anchored -xjvf android-ndk-*-linux-x86.tar.bz2; sudo -v; sudo mv android-ndk-*/ /usr/local/android-ndk; sudo -v; sudo chmod 777 -R /usr/local/android-ndk; rm android-ndk-*-linux-x86.tar.bz2;
@@ -18,12 +27,30 @@ else
     sudo -v; sudo ln -s /usr/local/android-sdk/tools/ddms /bin/ddms
 fi
 
-#Back to Main Script
-if [ ! -d "~/DAET/" ]
-then
-	cd ~/DAET/
-	. Start
 else
-	echo "Script Malfunctioned"
+if [ "$OS" != "Arch Linux \r (\l)" ]; then
+
+#Install android-sdk-platform-tools
+x=`pacman -Qs android-ndk`
+c=android-ndk
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo pacman -S --noconfirm $c
+fi
+	else
+    echo "Android NDK already installed"
+fi
 fi
 
+#Back to Main Script
+cd ..
+prev=$PWD
+
+if [[ -f $prev/DAET ]]; then
+	source $prev/DAET
+else
+	echo "script does not exist"
+	exit 1
+fi
