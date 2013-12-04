@@ -17,13 +17,15 @@ echo "${BRed}${sysinfo}System Info ${Reset}"
 echo  "       ------- "
 echo""
 
-echo "current user =" "${BRed}$USR ${Reset}"
+echo "Current User =" "${BRed}$USR ${Reset}"
 
-echo "System =" "${BRed}$SYS ${Reset}"
+echo "System =" "${BRed}$OS ${Reset}"
+
+echo "Kernerl =" "${BRed}$KER ${Reset}"
 
 echo "Architecture =" "${BRed}$BIT ${Reset}"
 
-echo "gcc version =" "${BRed}$GCC ${Reset}"
+echo "GCC Version =" "${BRed}$GCC ${Reset}"
 
 
 sleep 3
