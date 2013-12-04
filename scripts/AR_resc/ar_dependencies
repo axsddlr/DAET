@@ -1,0 +1,432 @@
+#!/bin/bash
+
+ #
+ # Copyright (C) 2012-2013, Ayysir
+ #
+ # Licensed under the Apache License, Version 2.0 (the "License");
+ # you may not use this file except in compliance with the License.
+ # You may obtain a copy of the License at
+ #
+ #      http://www.apache.org/licenses/LICENSE-2.0
+ #
+ # Unless required by applicable law or agreed to in writing, software
+ # distributed under the License is distributed on an "AS IS" BASIS,
+ # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ # See the License for the specific language governing permissions and
+ # limitations under the License.
+ # 
+reset
+DIR=$(pwd)
+resc=$DIR/scripts
+
+echo "Do you want to continue?"
+read usr
+echo ""
+
+if [[ $usr = y || $usr = Y ]]; then
+
+
+
+tput cup 3 19
+tput setaf 3
+echo "Enter System Password Below to Continue"
+tput sgr0
+
+sudo pacman -Syy
+#Check if Wget is installed
+x=`pacman -Qs wget`
+c=wget
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+
+ 
+#Install openjdk7
+x=`pacman -Qs openjdk7`
+c=openjdk7
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo pacman -S --noconfirm $c
+fi
+ 
+#Check if Eclipse is installed
+x=`pacman -Qs eclipse`
+c=eclipse
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs python2`
+c=python2
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs git`
+c=git
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs gnupg`
+c=gnupg
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs flex`
+c=flex
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs bison`
+c=bison
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs gperf`
+c=gperf
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs base-devel`
+c=base-devel
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs zip`
+c=zip
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs curl`
+c=curl
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs zlib`
+c=zlib
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs glibc`
+c=glibc
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs ncurses`
+c=ncurses
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs xproto`
+c=xproto
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs lib32-readline`
+c=lib32-readline
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs lib32-libx11`
+c=lib32-libx11
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs lib32-zlib`
+c=lib32-zlib
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs lib32-mesa`
+c=lib32-mesa
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs lib32-gcc-libs`
+c=lib32-gcc-libs
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs mingw32-gcc`
+c=mingw32-gcc
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+ 
+x=`pacman -Qs python-markdown`
+c=mingw32-gcc
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+x=`pacman -Qs libxml2`
+c=libxml2
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+#Check if alsa-lib is installed
+x=`pacman -Qs alsa-lib`
+c=alsa-lib
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+#Check if java-runtime is installed
+x=`pacman -Qs java-runtime`
+c=java-runtime
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+#Check if libstdc++5 is installed
+x=`pacman -Qs libstdc++5`
+c=libstdc++5
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+#Check if libxv is installed
+x=`pacman -Qs libxv`
+c=libxv
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+#Check if ncurses is installed
+x=`pacman -Qs ncurses`
+c=ncurses
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+#Check if openal is installed
+x=`pacman -Qs openal`
+c=openal
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+#Check if sdl is installed
+x=`pacman -Qs sdl`
+c=sdl
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+#Check if swt is installed
+x=`pacman -Qs swt`
+c=swt
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+#Check if zlib is installed
+x=`pacman -Qs zlib`
+c=zlib
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+ 
+#Check if libmtp is installed
+x=`pacman -Qs libmtp`
+c=libmtp
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+
+#Check if Wget is installed
+x=`pacman -Qs android-udev`
+c=android-udev
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo -v; sudo pacman -S --noconfirm $c
+fi
+
+sudo rm /usr/bin/python
+sudo ln -s /usr/bin/python2 /usr/bin/python
+fi
+
+
+#Check for repo
+if [ ! -f /usr/local/bin/repo ];
+then
+    wget http://commondatastorage.googleapis.com/git-repo-downloads/repo; sudo -v; sudo mv repo /usr/local/bin/repo; sudo -v; sudo chmod a+x /usr/local/bin/repo
+    echo " Installing in home directory as well"
+    mkdir /home/$USR/bin
+    curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > /home/$USR/bin/repo;
+	chmod a+x ~/bin/repo;
+else
+    echo "/usr/local/bin/repo already exists."
+fi
+
+#Set ~/bin to path
+if grep -q /home/$USR/bin /home/$USR/.bashrc;
+then
+    echo "$HOME/bin set up already."
+else
+    echo "export PATH=${PATH}:~/bin" >> /home/$USR/.bashrc
+    source /home/$USR/.bashrc
+fi
+
+while true; do
+    read -p "Do you wish to set up or change your git information? (Do this at least once)" yn
+    case $yn in
+        [Yy]* ) 
+echo "Please enter a name for the git-repo to identify you by (eg: David Tennant):";
+read input_variable;
+git config --global user.name "$input_variable";
+ 
+echo "Please enter an email address below for git-repo (eg: test@test.com): ";
+read input_variable;
+git config --global user.email "$input_variable";
+break;;
+        [Nn]* ) break;;
+        * ) if [[ -f $resc/AR ]]; then
+	source $resc/AR
+else
+	echo "script does not exist"
+	exit 1
+fi
+;;
+    esac
+done
+
+#Back to Main Script
+if [[ -f $resc/AR ]]; then
+	source $resc/AR
+else
+	echo "script does not exist"
+	exit 1
+fi
+
+# if user chooses no pretaining to first few lines in this script
+elif [[ $usr = n || $usr = N ]]; then
+	sleep 1
+	reset
+	source $resc/AR
+else
+	echo "script does not exist"
+fi
+

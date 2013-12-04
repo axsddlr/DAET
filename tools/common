@@ -41,10 +41,12 @@
     sysinfo=$(tput cup 2 5)
     ub=$(tput cup 1 5)
     main=$(tput cup 1 5)
+    ar=$(tput cup 1 5)
     #}}}
 
     # System Info
     BIT=`uname -m`
-    SYS=`uname -s`
+    OS=`cat /etc/issue`
+    KER=`uname -mrs`
     GCC=`gcc -dumpversion`
     USR=`whoami`

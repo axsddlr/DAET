@@ -1,0 +1,44 @@
+#!/bin/bash
+
+DIR=$(pwd)
+resc=$DIR/scripts
+if [[ -f $DIR/tools/common ]]; then
+		source $DIR/tools/common
+	else
+		echo "file does not exist"
+  		exit 1
+	fi
+
+#Create a symlink for Android Debug Bridge (adb)
+if [ -f /bin/adb ];
+then
+    sudo -v; sudo rm /bin/adb; sudo -v; sudo ln -s /opt/android-sdk/platform-tools/adb /bin/adb
+else
+    sudo -v; sudo ln -s /opt/android-sdk/platform-tools/adb /bin/adb
+fi
+ 
+#Create a symlink for Fastboot
+if [ -f /bin/fastboot ];
+then
+    sudo -v; sudo rm /bin/fastboot; sudo -v; sudo ln -s /opt/android-sdk/platform-tools/fastboot /bin/fastboot
+else
+    sudo -v; sudo ln -s /opt/android-sdk/platform-tools/fastboot /bin/fastboot
+fi
+ 
+#Installing adb!
+if [ ! -f "/opt/android-sdk/platform-tools/adb" ];
+then  
+	mkdir /home/$USR/.android; touch /home/$USR/.android/androidtool.cfg; echo "sdkman.force.http=true" > /home/$USR/.android/androidtool.cfg; nohup /opt/android-sdk/tools/android update sdk > /dev/null 2>&1
+else
+echo "Android Debug Bridge already detected."
+fi
+
+#Back to Main Script
+if [[ -f $resc/AR ]]; then
+	source $resc/AR
+else
+	echo "script does not exist"
+	exit 1
+fi
+
+

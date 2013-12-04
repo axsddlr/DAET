@@ -1,0 +1,52 @@
+#!/bin/bash
+
+DIR=$(pwd)
+resc=$DIR/scripts
+
+#Install android-sdk
+x=`pacman -Qs android-sdk`
+c=android-sdk
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo pacman -S --noconfirm $c
+fi
+
+#Install android-sdk-platform-tools
+x=`pacman -Qs android-sdk`
+c=android-sdk-platform-tools
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo pacman -S --noconfirm $c
+fi
+
+#Install android-sdk-build-tools
+x=`pacman -Qs android-sdk`
+c=android-sdk-build-tools
+if [ -n "$x" ]
+ then echo "$c already installed.  Skipping."
+  else
+	echo "$c was not found, installing..." 2>&1
+	sudo pacman -S --noconfirm $c
+fi
+
+#may need grep to check for lines in the future
+then
+    echo "$HOME/bin set up already."
+else
+    echo "export PATH=${PATH}:/opt/android-sdk/tools" >> /home/$USR/.bashrc
+    echo "export PATH=${PATH}:/opt/android-sdk/platform-toolsPATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/build-tools/19/:/opt/android-sdk/platform-tools:/opt/android-sdk/tools:/usr/bin/core_perl:/opt/android-sdk/tools:/opt/android-sdk" >> /home/$USR/.bashrc
+    source /home/$USR/.bashrc
+fi
+
+
+#Back to Main Script
+if [[ -f $resc/AR ]]; then
+	source $resc/AR
+else
+	echo "script does not exist"
+	exit 1
+fi
