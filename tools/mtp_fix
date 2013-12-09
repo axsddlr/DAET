@@ -1,5 +1,5 @@
 #!/bin/bash
-reset 
+reset
 DIR=$(pwd)
 
     if [[ -f $DIR/common ]]; then
@@ -10,7 +10,7 @@ DIR=$(pwd)
 	fi
 
 if [ "$OS" != "Arch Linux \r (\l)" ]; then
-tput bold 
+tput bold
 tput cup 0 14
 tput setaf 3
 read -p "Press [ENTER] to input system password to continue"
@@ -19,7 +19,7 @@ tput sgr0
 sudo add-apt-repository ppa:langdalepl/gvfs-mtp && sudo apt-get update && sudo apt-get upgrade
 
 tput clear
-tput bold 
+tput bold
 tput cup 0 17
 tput setaf 3
 read -p "You need to reboot Computer Now, [ENTER]"

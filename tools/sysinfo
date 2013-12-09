@@ -36,7 +36,7 @@ read fin
 
 if [[ $fin = y || $fin = Y ]]; then
 #below is a bit of a hack but works with no issues
-	    cd ..    
+	    cd ..
 	    dir=$(pwd)
 	    reset
         source $dir/scripts/More

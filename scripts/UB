@@ -14,7 +14,7 @@
  # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  # See the License for the specific language governing permissions and
  # limitations under the License.
- # 
+ #
 
 DIR=$(pwd)
 UBT=$DIR/scripts #UBT = UBUNTU, this variable looks for scripts directory in DAET folder
@@ -38,14 +38,14 @@ while [[ -f $UBT/UB ]]; do
 	echo "${BRed}${ub}Ubuntu Main Menu ${Reset}"
 	echo  "        ---------- "
 	echo""
-	echo  "1. Install Dependencies" 
-	echo  "2. Ubuntu 11.10 users"  
-	echo  "3. Install Android SDK"  
-	echo  "4. Install Android Debug Bridge (ADB)"  
-	echo  "5. Install 1-4"   
+	echo  "1. Install Dependencies"
+	echo  "2. Ubuntu 11.10 users"
+	echo  "3. Install Android SDK"
+	echo  "4. Install Android Debug Bridge (ADB)"
+	echo  "5. Install 1-4"
 	echo  "6. More"
 	echo  "m. Main distro menu"
-	echo  "0. Exit"  
+	echo  "0. Exit"
     read input
 
     case $input in
@@ -91,7 +91,7 @@ while [[ -f $UBT/UB ]]; do
               echo "File does not exist"
               reset
               fi
-              
+
               sleep 2
 
             if [[ -f $resc/11_10 ]]; then
@@ -100,7 +100,7 @@ while [[ -f $UBT/UB ]]; do
               echo "File does not exist"
               reset
               fi
-              
+
               sleep 2
 
             if [[ -f $resc/sdk ]]; then
@@ -109,7 +109,7 @@ while [[ -f $UBT/UB ]]; do
               echo "File does not exist"
               reset
               fi
-              
+
               sleep 2
 
             if [[ -f $resc/adb ]]; then
@@ -141,7 +141,7 @@ while [[ -f $UBT/UB ]]; do
 
 
       0)
-            reset 
+            reset
             exit 1
             ;;
 

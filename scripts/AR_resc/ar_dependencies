@@ -14,7 +14,7 @@
  # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  # See the License for the specific language governing permissions and
  # limitations under the License.
- # 
+ #
 reset
 DIR=$(pwd)
 resc=$DIR/scripts
@@ -43,7 +43,7 @@ if [ -n "$x" ]
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
 
- 
+
 #Install openjdk7
 x=`pacman -Qs openjdk7`
 c=openjdk7
@@ -53,7 +53,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo pacman -S --noconfirm $c
 fi
- 
+
 #Check if Eclipse is installed
 x=`pacman -Qs eclipse`
 c=eclipse
@@ -63,7 +63,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs python2`
 c=python2
 if [ -n "$x" ]
@@ -72,7 +72,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs git`
 c=git
 if [ -n "$x" ]
@@ -81,7 +81,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs gnupg`
 c=gnupg
 if [ -n "$x" ]
@@ -90,7 +90,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs flex`
 c=flex
 if [ -n "$x" ]
@@ -99,7 +99,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs bison`
 c=bison
 if [ -n "$x" ]
@@ -108,7 +108,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs gperf`
 c=gperf
 if [ -n "$x" ]
@@ -117,7 +117,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs base-devel`
 c=base-devel
 if [ -n "$x" ]
@@ -126,7 +126,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs zip`
 c=zip
 if [ -n "$x" ]
@@ -135,7 +135,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs curl`
 c=curl
 if [ -n "$x" ]
@@ -144,7 +144,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs zlib`
 c=zlib
 if [ -n "$x" ]
@@ -153,7 +153,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs glibc`
 c=glibc
 if [ -n "$x" ]
@@ -162,7 +162,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs ncurses`
 c=ncurses
 if [ -n "$x" ]
@@ -171,7 +171,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs xproto`
 c=xproto
 if [ -n "$x" ]
@@ -180,7 +180,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs lib32-readline`
 c=lib32-readline
 if [ -n "$x" ]
@@ -189,7 +189,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs lib32-libx11`
 c=lib32-libx11
 if [ -n "$x" ]
@@ -198,7 +198,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs lib32-zlib`
 c=lib32-zlib
 if [ -n "$x" ]
@@ -207,7 +207,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs lib32-mesa`
 c=lib32-mesa
 if [ -n "$x" ]
@@ -216,7 +216,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs lib32-gcc-libs`
 c=lib32-gcc-libs
 if [ -n "$x" ]
@@ -225,7 +225,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs mingw32-gcc`
 c=mingw32-gcc
 if [ -n "$x" ]
@@ -234,8 +234,8 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
- 
+
+
 x=`pacman -Qs python-markdown`
 c=mingw32-gcc
 if [ -n "$x" ]
@@ -244,7 +244,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 x=`pacman -Qs libxml2`
 c=libxml2
 if [ -n "$x" ]
@@ -253,7 +253,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 #Check if alsa-lib is installed
 x=`pacman -Qs alsa-lib`
 c=alsa-lib
@@ -263,7 +263,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 #Check if java-runtime is installed
 x=`pacman -Qs java-runtime`
 c=java-runtime
@@ -273,7 +273,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 #Check if libstdc++5 is installed
 x=`pacman -Qs libstdc++5`
 c=libstdc++5
@@ -283,7 +283,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 #Check if libxv is installed
 x=`pacman -Qs libxv`
 c=libxv
@@ -293,7 +293,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 #Check if ncurses is installed
 x=`pacman -Qs ncurses`
 c=ncurses
@@ -303,7 +303,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 #Check if openal is installed
 x=`pacman -Qs openal`
 c=openal
@@ -313,7 +313,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 #Check if sdl is installed
 x=`pacman -Qs sdl`
 c=sdl
@@ -323,7 +323,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 #Check if swt is installed
 x=`pacman -Qs swt`
 c=swt
@@ -333,7 +333,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 #Check if zlib is installed
 x=`pacman -Qs zlib`
 c=zlib
@@ -343,7 +343,7 @@ if [ -n "$x" ]
 	echo "$c was not found, installing..." 2>&1
 	sudo -v; sudo pacman -S --noconfirm $c
 fi
- 
+
 #Check if libmtp is installed
 x=`pacman -Qs libmtp`
 c=libmtp
@@ -393,11 +393,11 @@ fi
 while true; do
     read -p "Do you wish to set up or change your git information? (Do this at least once)" yn
     case $yn in
-        [Yy]* ) 
+        [Yy]* )
 echo "Please enter a name for the git-repo to identify you by (eg: David Tennant):";
 read input_variable;
 git config --global user.name "$input_variable";
- 
+
 echo "Please enter an email address below for git-repo (eg: test@test.com): ";
 read input_variable;
 git config --global user.email "$input_variable";

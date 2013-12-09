@@ -12,7 +12,7 @@ else
 fi
 #Installing adb!
 if [ ! -f "/usr/local/android-sdk/platform-tools/adb" ];
-then  
+then
 	mkdir $HOME/.android; touch $HOME/.android/androidtool.cfg; echo "sdkman.force.http=true" > $HOME/.android/androidtool.cfg; nohup /usr/local/android-sdk/tools/android update sdk > /dev/null 2>&1
 else
 echo "Android Debug Bridge already detected."

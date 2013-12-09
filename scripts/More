@@ -14,7 +14,7 @@
  # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  # See the License for the specific language governing permissions and
  # limitations under the License.
- # 
+ #
 
 DIR=$(pwd)
 UBT=$DIR/scripts #UBT = UBUNTU, this variable looks for scripts directory in DAET folder
@@ -27,12 +27,12 @@ while [[ -f $UBT/UB ]]; do
 		echo "file does not exist"
   		exit 1
 	fi
-    
+
 
     #hack
     cd ..
     resc=$DIR/scripts
-    cd $resc 
+    cd $resc
 
     if [ "$ERROR" != "" ]; then
     echo "Error: $ERROR"
@@ -41,12 +41,12 @@ while [[ -f $UBT/UB ]]; do
 
     echo  "${BRed}${More}More${Reset}"
     echo  "    ------ "
-	  echo  "1. Update SDK" 
-	  echo  "2. Fix mtp for 12.04 users (ubuntu only)"  
+	  echo  "1. Update SDK"
+	  echo  "2. Fix mtp for 12.04 users (ubuntu only)"
 	  echo  "3. Install Android NDK (both distros)"
-    echo  "4. System Info"    
+    echo  "4. System Info"
 	  echo  "m. Main ubuntu menu"
-	  echo  "0. Exit"  
+	  echo  "0. Exit"
     read input
 
     case $input in
@@ -54,7 +54,7 @@ while [[ -f $UBT/UB ]]; do
             #hack
             cd ..
             resc=$DIR/tools
-            cd $resc 
+            cd $resc
 
             if [[ -f $resc/sdk_updates ]]; then
               source $resc/sdk_updates
@@ -116,7 +116,7 @@ while [[ -f $UBT/UB ]]; do
 
 
       0)
-            reset 
+            reset
             exit 1
             ;;
 

@@ -14,7 +14,7 @@
  # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  # See the License for the specific language governing permissions and
  # limitations under the License.
- # 
+ #
 
 DIR=$(pwd)
 ARH=$DIR/scripts #UBT = UBUNTU, this variable looks for scripts directory in DAET folder
@@ -41,14 +41,14 @@ while [[ -f $ARH/AR ]]; do
 	echo "${BRed}${ar}Arch Main Menu ${Reset}"
 	echo  "        ---------- "
 	echo""
-	echo  "1. Install Dependencies" 
-	echo  "2. Install Android SDK"  
-	echo  "3. Install Android Debug Bridge (ADB) & Fastboot"  
-	echo  "4. Install 1-3"   
+	echo  "1. Install Dependencies"
+	echo  "2. Install Android SDK"
+	echo  "3. Install Android Debug Bridge (ADB) & Fastboot"
+	echo  "4. Install 1-3"
 	echo  "5. More"
 	echo  "m. Main distro menu"
-	echo  "0. Exit" 
-  echo "" 
+	echo  "0. Exit"
+  echo ""
   echo -n "Choice: "
   read input
 
@@ -88,7 +88,7 @@ while [[ -f $ARH/AR ]]; do
               echo "File does not exist"
               reset
               fi
-              
+
               sleep 2
 
             if [[ -f $resc/ar_sdk ]]; then
@@ -97,7 +97,7 @@ while [[ -f $ARH/AR ]]; do
               echo "File does not exist"
               reset
               fi
-              
+
               sleep 2
 
             if [[ -f $resc/ar_adb ]]; then
@@ -129,7 +129,7 @@ while [[ -f $ARH/AR ]]; do
 
 
       0)
-            reset 
+            reset
             exit 1
             ;;
 

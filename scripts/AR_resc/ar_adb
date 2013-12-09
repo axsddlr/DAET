@@ -16,7 +16,7 @@ then
 else
     sudo -v; sudo ln -s /opt/android-sdk/platform-tools/adb /bin/adb
 fi
- 
+
 #Create a symlink for Fastboot
 if [ -f /bin/fastboot ];
 then
@@ -24,10 +24,10 @@ then
 else
     sudo -v; sudo ln -s /opt/android-sdk/platform-tools/fastboot /bin/fastboot
 fi
- 
+
 #Installing adb!
 if [ ! -f "/opt/android-sdk/platform-tools/adb" ];
-then  
+then
 	mkdir /home/$USR/.android; touch /home/$USR/.android/androidtool.cfg; echo "sdkman.force.http=true" > /home/$USR/.android/androidtool.cfg; nohup /opt/android-sdk/tools/android update sdk > /dev/null 2>&1
 else
 echo "Android Debug Bridge already detected."

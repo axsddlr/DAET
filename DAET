@@ -14,9 +14,9 @@
  # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  # See the License for the specific language governing permissions and
  # limitations under the License.
- # 
+ #
 
-reset 
+reset
 
 DIR=$(pwd)
 
@@ -39,10 +39,10 @@ while [[ -f $DIR/DAET ]]; do
     echo  "${BRed}${main}Main Menu${Reset}"
     echo  "      ------ "
     echo  "1. Ubuntu Setup"
-    echo  "2. Archlinux Setup" 
-    echo  "3. Update DAET" 
+    echo  "2. Archlinux Setup"
+    echo  "3. Update DAET"
     echo  "0. Exit"
-    echo  "Enter your choice " 
+    echo  "Enter your choice "
     read input
 
     case $input in
@@ -70,12 +70,12 @@ while [[ -f $DIR/DAET ]]; do
               reset
             else
               echo "File does not exist"
-              reset              
+              reset
               fi
               ;;
 
       0)
-            reset 
+            reset
             exit 1
             ;;
 
