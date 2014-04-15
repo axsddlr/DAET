@@ -42,8 +42,9 @@ while [[ -f $UBT/UB ]]; do
 	echo  "2. Ubuntu 11.10 users"
 	echo  "3. Install Android SDK"
 	echo  "4. Install Android Debug Bridge (ADB)"
-	echo  "5. Install 1-4"
-	echo  "6. More"
+  echo  "5. Append .bashrc (Required)"
+	echo  "6. Install 1-5"
+	echo  "7. More"
 	echo  "m. Main distro menu"
 	echo  "0. Exit"
     read input
@@ -84,7 +85,18 @@ while [[ -f $UBT/UB ]]; do
               ;;
 
       5)
-
+            if [[ -f $BASH ]]; then 
+              echo " " >> $BASH
+              echo "USE_CCACHE=1" >> $BASH
+              echo "export PATH=${PATH}:~/bin" >> $BASH
+              echo "export PATH=$PATH:/usr/local/android-sdk/tools" >> $BASH
+              echo "export PATH=$PATH:/usr/local/android-sdk/platform-tools" >> $BASH
+            else
+              echo "File does not exist"
+              reset
+              fi              
+              ;;      
+    6)
             if [[ -f $resc/dependencies ]]; then
               source $resc/dependencies
             else
@@ -118,9 +130,21 @@ while [[ -f $UBT/UB ]]; do
               echo "File does not exist"
               reset
               fi
-              ;;
 
-    6)
+            if [[ -f $BASH ]]; then 
+              echo " " >> $BASH
+              echo "USE_CCACHE=1" >> $BASH
+              echo "export PATH=${PATH}:~/bin" >> $BASH
+              echo "export PATH=$PATH:/usr/local/android-sdk/tools" >> $BASH
+              echo "export PATH=$PATH:/usr/local/android-sdk/platform-tools" >> $BASH  
+            else
+              echo "File does not exist"
+              reset
+              fi                          
+              ;;
+    
+
+    7)
             if [[ -f $UBT/More ]]; then
               reset
               source $UBT/More

@@ -50,3 +50,6 @@
     KER=`uname -mrs`
     GCC=`gcc -dumpversion`
     USR=`whoami`
+
+    #bashrc
+    Bash=/home/${USR}/.bashrc
