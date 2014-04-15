@@ -33,7 +33,7 @@ echo "Enter System Password Below to Continue"
 tput sgr0
 
 if [ ! -f /var/lib/apt/lists/archive.canonical.com_dists_oneiric_partner_binary-i386_Packages ]
-then sudo -v; sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -s -c) partner"
+then sudo -v; sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -s -c) partner" && sudo add-apt-repository "ppa:webupd8team/java"
 else echo "repository already exists."
 fi
 sudo -v; sudo apt-get update
@@ -56,18 +56,7 @@ else
 fi
 
 #Check if sun-java6-jdk is installed
-c=sun-java6-jdk
-	echo "checking if $c is installed" 2>&1
-if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]];
-then
-	echo "$c already installed.  Skipping."
-else
-	echo "$c was not found, installing..." 2>&1
-	sudo -v; sudo apt-get --force-yes -y install $c 2>/dev/null
-fi
-
-#Check if sun-java6-jre is installed
-c=sun-java6-jre
+c=oracle-java6-installer
 	echo "checking if $c is installed" 2>&1
 if [[ $(dpkg-query -f'${Status}' --show $c 2>/dev/null) = *\ installed ]];
 then
