@@ -91,6 +91,7 @@ while [[ -f $UBT/UB ]]; do
               echo "export PATH=${PATH}:~/bin" >> $BASH
               echo "export PATH=$PATH:/usr/local/android-sdk/tools" >> $BASH
               echo "export PATH=$PATH:/usr/local/android-sdk/platform-tools" >> $BASH
+              source $BASH
             else
               echo "File does not exist"
               reset
@@ -137,6 +138,7 @@ while [[ -f $UBT/UB ]]; do
               echo "export PATH=${PATH}:~/bin" >> $BASH
               echo "export PATH=$PATH:/usr/local/android-sdk/tools" >> $BASH
               echo "export PATH=$PATH:/usr/local/android-sdk/platform-tools" >> $BASH  
+              source $BASH
             else
               echo "File does not exist"
               reset
