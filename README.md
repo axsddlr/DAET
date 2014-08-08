@@ -14,9 +14,11 @@ Setup
 =====
 
 1) Go to your home directory
+
     cd /home/<your_username>
 
 2) Launch the script
+
     ./DAET
 
 Known bugs
