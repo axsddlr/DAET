@@ -1,7 +1,7 @@
 #!/bin/bash
 
  #
- # Copyright (C) 2012-2013, Ayysir
+ #      Copyright (C) 2012-2014, Ayysir
  #
  # Licensed under the Apache License, Version 2.0 (the "License");
  # you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ while [[ -f $UBT/UB ]]; do
 	echo  "        ---------- "
 	echo""
 	echo  "1. Install Dependencies"
-	echo  "2. Ubuntu 11.10 users"
+	echo  "2. Ubuntu 14.04 users"
 	echo  "3. Install Android SDK"
 	echo  "4. Install Android Debug Bridge (ADB)"
   echo  "5. Append .bashrc (Required)"
@@ -59,8 +59,8 @@ while [[ -f $UBT/UB ]]; do
               fi
               ;;
       2)
-            if [[ -f $resc/11_10 ]]; then
-              source $resc/11_10
+            if [[ -f $resc/14_04 ]]; then
+              source $resc/14_04
             else
               echo "File does not exist"
               reset
@@ -107,8 +107,8 @@ while [[ -f $UBT/UB ]]; do
 
               sleep 2
 
-            if [[ -f $resc/11_10 ]]; then
-              source $resc/11_10
+            if [[ -f $resc/14_04 ]]; then
+              source $resc/14_04
             else
               echo "File does not exist"
               reset

@@ -1,7 +1,7 @@
 #!/bin/bash
 
  #
- # Copyright (C) 2012-2013, Ayysir
+ #      Copyright (C) 2012-2014, Ayysir
  #
  # Licensed under the Apache License, Version 2.0 (the "License");
  # you may not use this file except in compliance with the License.
@@ -19,20 +19,37 @@
 DIR=$(pwd)
 resc=$DIR/scripts
 
-#Create a symlink for Android Debug Bridge (adb)
-if [ -f /bin/adb ];
-then
-    sudo -v; sudo rm /bin/adb; sudo -v; sudo ln -s /usr/local/android-sdk/platform-tools/adb /bin/adb
-else
-    sudo -v; sudo ln -s /usr/local/android-sdk/platform-tools/adb /bin/adb
-fi
-#Installing adb!
-if [ ! -f "/usr/local/android-sdk/platform-tools/adb" ];
-then
-	mkdir $HOME/.android; touch $HOME/.android/androidtool.cfg; echo "sdkman.force.http=true" > $HOME/.android/androidtool.cfg; nohup /usr/local/android-sdk/tools/android update sdk > /dev/null 2>&1
-else
-echo "Android Debug Bridge already detected."
-fi
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#                                                                                     #
+# There is no need to manually set-up ADB anymore. If for some reason you would like  #
+# the script to manually set up ADB, then uncomment the following box.                #
+#                                                                                     #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#                                                                                     #
+##Create a symlink for Android Debug Bridge (adb)                                     #
+# if [ -f /bin/adb ];                                                                 #
+# then                                                                                #
+#     sudo -v;                                                                        #
+#     sudo rm /bin/adb;                                                               #
+#     sudo -v;                                                                        #
+#     sudo ln -s /usr/local/android-sdk/platform-tools/adb /bin/adb                   #
+# else                                                                                #
+#     sudo -v; sudo ln -s /usr/local/android-sdk/platform-tools/adb /bin/adb          #
+# fi                                                                                  #
+##Installing adb!                                                                     #
+# if [ ! -f "/usr/local/android-sdk/platform-tools/adb" ];                            #
+# then                                                                                #
+#	mkdir $HOME/.android; touch $HOME/.android/androidtool.cfg;                   #
+#       echo "sdkman.force.http=true" > $HOME/.android/androidtool.cfg;               #
+#       nohup /usr/local/android-sdk/tools/android update sdk > /dev/null 2>&1        #
+# else                                                                                #
+# echo "Android Debug Bridge already detected."                                       #
+# fi                                                                                  #
+#                                                                                     #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+#Automatically set-up ADB (it is now found in the stock Ubuntu package repositories)
+    sudo apt-get install android-tools-adb -y;
 
 #Back to Main Script
 if [[ -f $resc/UB ]]; then
@@ -41,5 +58,4 @@ else
 	echo "script does not exist"
 	exit 1
 fi
-
 

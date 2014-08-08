@@ -1,25 +1,24 @@
-DAET Beta 5
-===
+DAET Beta 6
+===========
 
-Distro Android Environment Tool
+## Distro Android Environment Tool ##
 
 (Used to be known as 'AET' or 'AEI')
 
-By Ayysir (xda: http://forum.xda-developers.com/member.php?u=4238916)
+Created by Andre Saddler ([ayysir@XDA](http://forum.xda-developers.com/member.php?u=4238916))
 
-Forum Thread: http://forum.xda-developers.com/showthread.php?t=2100673
+[XDA Forum Thread](http://forum.xda-developers.com/showthread.php?t=2100673)
 
 
 Setup
-===
-cd /home/<your system name> OR cd ~/
+=====
 
-THEN
+1) Go to your home directory
+    cd /home/<your_username>
 
-./DAET
+2) Launch the script
+    ./DAET
 
 Known bugs
-===
-*not at the moment
-===
-
+==========
+None at the moment
