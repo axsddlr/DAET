@@ -49,7 +49,8 @@ resc=$DIR/scripts
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 #Automatically set-up ADB (it is now found in the stock Ubuntu package repositories)
-    sudo apt-get install android-tools-adb -y;
+    sudo apt-get --force-yes -y install android-tools-adb;
+    echo "ADB (Android Debug Bridge) was successfully installed."
 
 #Back to Main Script
 if [[ -f $resc/UB ]]; then
